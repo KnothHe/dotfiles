@@ -2,3 +2,4 @@
 
 - .tmux.conf -> tmux
 - .zshrc -> oh my zsh
+- honukai.zsh-theme -> zsh theme

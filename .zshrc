@@ -114,9 +114,10 @@ if [ -f ~/.dir_colors ]; then
 fi
 
 alias pc=proxychains4
-alias gp='pc git push'
+alias gp='proxychains4 git push'
 alias vim=nvim
 alias oldvim='\vim'
+alias lc='leetcode'
 
 #[[ -z "$TMUX" && -n "$USE_TMUX" ]] && {
     #[[ -n "$ATTACH_ONLY" ]] && {

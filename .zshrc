@@ -14,7 +14,9 @@
 # ZSH_THEME="zeta"
 # ZSH_THEME="bullet-train"
 # ZSH_THEME="line"
-ZSH_THEME="honukai"
+# ZSH_THEME="honukai"
+# ZSH_THEME="cloud"
+ZSH_THEME="kh"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -118,6 +120,7 @@ alias gp='proxychains4 git push'
 alias vim=nvim
 alias oldvim='\vim'
 alias lc='leetcode'
+alias open='explorer.exe'
 
 #[[ -z "$TMUX" && -n "$USE_TMUX" ]] && {
     #[[ -n "$ATTACH_ONLY" ]] && {

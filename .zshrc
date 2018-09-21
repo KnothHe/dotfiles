@@ -121,6 +121,14 @@ alias vim=nvim
 alias oldvim='\vim'
 alias lc='leetcode'
 alias open='explorer.exe'
+alias bc='bc -l'
+alias c='clear'
+
+alias ...='cd ../../../'
+alias ....='cd ../../../../'
+alias .....='cd ../../../../../'
+alias .4='cd ../../../../'
+alias .5='cd ../../../../../'
 
 #[[ -z "$TMUX" && -n "$USE_TMUX" ]] && {
     #[[ -n "$ATTACH_ONLY" ]] && {

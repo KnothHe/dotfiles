@@ -124,6 +124,7 @@ alias lc='leetcode'
 alias open='explorer.exe'
 alias bc='bc -l'
 alias c='clear'
+alias zshconfig='nvim ~/.zshrc'
 
 alias ...='cd ../../../'
 alias ....='cd ../../../../'
@@ -131,18 +132,8 @@ alias .....='cd ../../../../../'
 alias .4='cd ../../../../'
 alias .5='cd ../../../../../'
 
-#[[ -z "$TMUX" && -n "$USE_TMUX" ]] && {
-    #[[ -n "$ATTACH_ONLY" ]] && {
-        #tmux a 2>/dev/null || {
-            #cd && exec tmux
-        #}
-        #exit
-    #}
-
-    #tmux new-window -c "$PWD" 2>/dev/null && exec tmux a
-    #exec tmux
-#}
 if [ $TERM != "screen-256color" ] && [  $TERM != "screen" ]; then
     tmux attach || tmux new; exit
 fi
 
+cd ~

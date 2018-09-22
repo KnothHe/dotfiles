@@ -16,7 +16,8 @@
 # ZSH_THEME="line"
 # ZSH_THEME="honukai"
 # ZSH_THEME="cloud"
-ZSH_THEME="kh"
+# ZSH_THEME="kh"
+ZSH_THEME="wedisagree"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random

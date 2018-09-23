@@ -125,6 +125,7 @@ alias open='explorer.exe'
 alias bc='bc -l'
 alias c='clear'
 alias zshconfig='nvim ~/.zshrc'
+alias say='fortune | cowsay | lolcat'
 
 alias ...='cd ../../../'
 alias ....='cd ../../../../'
@@ -132,8 +133,13 @@ alias .....='cd ../../../../../'
 alias .4='cd ../../../../'
 alias .5='cd ../../../../../'
 
-if [ $TERM != "screen-256color" ] && [  $TERM != "screen" ]; then
-    tmux attach || tmux new; exit
+if which tmux 2>&1 >/dev/null; then
+    test -z "$TMUX" && (tmux attach || tmux)
 fi
 
+#if [ $TERM != "screen-256color" ] && [  $TERM != "screen" ]; then
+    #tmux attach || tmux new; exit
+#fi
+
 cd ~
+fortune | cowsay | lolcat

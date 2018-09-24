@@ -1,40 +1,17 @@
 # This is some of my config files
 
-## shell color
-
-```sh
-ln dir_colors ~/
-```
-
-## proxychains-ng
-
-### download
-
-```sh
-git clone https://github.com/rofl0r/proxychains-ng
-```
-
-### build and install
-
-``` sh
-./configure --prefix=/usr --sysconfdir=/etc
-make 
-sudo make install
-sudo make install-config
-```
-
-[tips] maybe need install gcc and build-essential
-
-### configure
-
-```sh
-ln proxychains4.conf /etc/
-```
-
 ## tmux
 
+### tmux configure
+
 ```sh
-ln .tmux.conf ~/
+ln ./tmux/.tmux.conf ~/
+```
+
+### tmux-powerline configure
+
+```sh
+ln ./tmux/default.sh ~/.config/tmux/tmux-powerline/themes/
 ```
 
 ## zsh and oh-my-zsh
@@ -106,3 +83,35 @@ sh ./installer.sh ~/.cache/dein
 
 open nvim and `:call dein#install()`
 
+## misc
+
+### proxychains-ng
+
+#### download
+
+```sh
+git clone https://github.com/rofl0r/proxychains-ng
+```
+
+#### build and install
+
+``` sh
+./configure --prefix=/usr --sysconfdir=/etc
+make 
+sudo make install
+sudo make install-config
+```
+
+[tips] maybe need install gcc and build-essential
+
+#### configure
+
+```sh
+ln ./misc/proxychains4.conf /etc/
+```
+
+### shell color
+
+```sh
+ln ./misc/.dir_colors ~/
+```

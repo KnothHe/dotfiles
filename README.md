@@ -80,13 +80,19 @@ https://github.com/zsh-users/zsh-autosuggestions.git
 
 move these folders into ~/.oh-my-zsh/custom/plugins/
 
-## vim / nvim
+## nvim
 
 ### configure
 
 ```sh
 ln .vimrc ~/
 ln .init.vim ~/.config/nvim/
+```
+
+### themes
+
+```sh
+ln molokai.vim ~/.vim/colors/
 ```
 
 ### install dein.vim
@@ -96,14 +102,7 @@ curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh >
 sh ./installer.sh ~/.cache/dein
 ```
 
-
 ### install other plugins
 
-open nvim and :call dein#install()
-
-### themes
-
-```sh
-ln molokai.vim ~/.vim/colors/
-```
+open nvim and `:call dein#install()`
 

@@ -72,13 +72,14 @@ ZSH_THEME="wedisagree"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  zsh-proxychains-ng
-  zsh-syntax-highlighting 
-  zsh-autosuggestions
-  zsh-completions
-  git
-  wd
-  z
+    colored-man-pages
+    zsh-proxychains-ng
+    zsh-syntax-highlighting 
+    zsh-autosuggestions
+    zsh-completions
+    git
+    wd
+    z
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -113,7 +114,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 if [ -f ~/.dir_colors ]; then
-  eval `dircolors ~/.dir_colors`
+    eval `dircolors ~/.dir_colors`
 fi
 
 alias pc=proxychains4
@@ -138,8 +139,8 @@ if which tmux 2>&1 >/dev/null; then
 fi
 
 #if [ $TERM != "screen-256color" ] && [  $TERM != "screen" ]; then
-    #tmux attach || tmux new; exit
+#tmux attach || tmux new; exit
 #fi
 
-cd ~
+cd /mnt/d/ubuntu/
 fortune | cowsay | lolcat

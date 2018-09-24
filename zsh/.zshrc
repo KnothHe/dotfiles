@@ -134,5 +134,4 @@ fi
 #tmux attach || tmux new; exit
 #fi
 
-cd /mnt/d/ubuntu/
-fortune | cowsay | lolcat
+cd ~

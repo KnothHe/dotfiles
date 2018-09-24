@@ -54,13 +54,13 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 ### configure
 
 ```sh
-ln .zshrc ~/
+ln ./zsh/.zshrc ~/
 ```
 
 #### theme
 
 ```sh
-ln wedisagree.zsh-theme ~/.oh-my-zsh/custom/themes/
+ln ./zsh/wedisagree.zsh-theme ~/.oh-my-zsh/custom/themes/
 ```
 
 #### plugins
@@ -85,14 +85,14 @@ move these folders into ~/.oh-my-zsh/custom/plugins/
 ### configure
 
 ```sh
-ln .vimrc ~/
-ln .init.vim ~/.config/nvim/
+ln ./vim/.vimrc ~/
+ln ./vim/.init.vim ~/.config/nvim/
 ```
 
 ### themes
 
 ```sh
-ln molokai.vim ~/.vim/colors/
+ln ./vim/molokai.vim ~/.vim/colors/
 ```
 
 ### install dein.vim

@@ -11,13 +11,7 @@
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="agnosterzak"
-# ZSH_THEME="zeta"
-# ZSH_THEME="bullet-train"
-# ZSH_THEME="line"
-# ZSH_THEME="honukai"
-# ZSH_THEME="cloud"
-# ZSH_THEME="kh"
-ZSH_THEME="wedisagree"
+ZSH_THEME="nametime"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -73,10 +67,8 @@ ZSH_THEME="wedisagree"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     colored-man-pages
-    zsh-proxychains-ng
     zsh-syntax-highlighting 
     zsh-autosuggestions
-    zsh-completions
     git
     wd
     z

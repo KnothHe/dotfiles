@@ -37,15 +37,11 @@ ln ./zsh/.zshrc ~/
 #### theme
 
 ```sh
-ln ./zsh/wedisagree.zsh-theme ~/.oh-my-zsh/custom/themes/
+ln ./zsh/nametime.zsh-theme ~/.oh-my-zsh/custom/themes/
 ```
 
 #### plugins
 
-- zsh-completions 
-```sh
-git clone https://github.com/zsh-users/zsh-completions.git
-```
 - zsh-syntax-highlighting
 ```sh
 https://github.com/zsh-users/zsh-syntax-highlighting.git

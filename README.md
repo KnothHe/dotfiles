@@ -53,32 +53,6 @@ https://github.com/zsh-users/zsh-autosuggestions.git
 
 move these folders into ~/.oh-my-zsh/custom/plugins/
 
-## nvim
-
-### configure
-
-```sh
-ln ./vim/.vimrc ~/
-ln ./vim/.init.vim ~/.config/nvim/
-```
-
-### themes
-
-```sh
-ln ./vim/molokai.vim ~/.vim/colors/
-```
-
-### install dein.vim
-
-```sh
-curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
-sh ./installer.sh ~/.cache/dein
-```
-
-### install other plugins
-
-open nvim and `:call dein#install()`
-
 ## misc
 
 ### proxychains-ng

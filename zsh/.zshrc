@@ -4,6 +4,7 @@
 # Path to your oh-my-zsh installation.
   export ZSH="/home/knothhe/.oh-my-zsh"
   export LANG=en_US.utf8
+  export EDITOR=nvim
   
   export PATH=~/bin:"$PATH"
 
@@ -69,6 +70,7 @@ plugins=(
     colored-man-pages
     zsh-syntax-highlighting 
     zsh-autosuggestions
+    tmux
     git
     wd
     z
@@ -113,7 +115,7 @@ alias pc=proxychains4
 alias gp='proxychains4 git push'
 alias vim=nvim
 alias oldvim='\vim'
-alias lc='proxychains4 leetcode'
+alias lc='leetcode'
 alias open='explorer.exe'
 alias bc='bc -l'
 alias c='clear'

@@ -1,4 +1,4 @@
-# This is some of my config files
+# There are some of my config files
 
 ## tmux
 
@@ -67,7 +67,7 @@ git clone https://github.com/rofl0r/proxychains-ng
 
 ``` sh
 ./configure --prefix=/usr --sysconfdir=/etc
-make 
+make
 sudo make install
 sudo make install-config
 ```

@@ -11,7 +11,14 @@ ln ./tmux/.tmux.conf ~/
 ### tmux-powerline configure
 
 ```sh
+git clone https://github.com/erikw/tmux-powerline.git ~/.config/tmux/
 ln ./tmux/default.sh ~/.config/tmux/tmux-powerline/themes/
+```
+
+### install powerline
+
+```sh
+pip install --user powerline-status
 ```
 
 ## zsh and oh-my-zsh

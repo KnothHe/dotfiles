@@ -70,6 +70,7 @@ plugins=(
     colored-man-pages
     zsh-syntax-highlighting 
     zsh-autosuggestions
+    extract
     tmux
     git
     wd
@@ -116,6 +117,7 @@ alias gp='proxychains4 git push'
 alias vim=nvim
 alias oldvim='\vim'
 alias lc='leetcode'
+alias plc='proxychains4 leetcode'
 alias open='explorer.exe'
 alias bc='bc -l'
 alias c='clear'

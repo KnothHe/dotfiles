@@ -5,7 +5,7 @@
   export ZSH="/home/knothhe/.oh-my-zsh"
   export LANG=en_US.utf8
   export EDITOR=nvim
-  
+
   export PATH=~/bin:"$PATH"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
@@ -68,8 +68,8 @@ ZSH_THEME="nametime"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     colored-man-pages
-    zsh-syntax-highlighting 
-    zsh-autosuggestions
+    zsh-syntax-highlighting
+    sh-autosuggestions
     extract
     tmux
     git
@@ -112,16 +112,23 @@ if [ -f ~/.dir_colors ]; then
     eval `dircolors ~/.dir_colors`
 fi
 
+# neovim alias
+if type nvim > /dev/null 2>&1; then
+    alias vim='nvim'
+    alias vi=nvim
+    alias vim=nvim
+    alias oldvim='\vim'
+fi
+
 alias pc=proxychains4
 alias gp='proxychains4 git push'
-alias vim=nvim
-alias oldvim='\vim'
 alias lc='leetcode'
 alias plc='proxychains4 leetcode'
 alias open='explorer.exe'
 alias bc='bc -l'
 alias c='clear'
-alias zshconfig='nvim ~/.zshrc'
+alias zshconfig='vi ~/.zshrc'
+alias tmuxconfig='vi ~/.tmux.conf'
 alias say='fortune | cowsay | lolcat'
 
 alias ...='cd ../../../'
@@ -129,6 +136,7 @@ alias ....='cd ../../../../'
 alias .....='cd ../../../../../'
 alias .4='cd ../../../../'
 alias .5='cd ../../../../../'
+
 
 if which tmux 2>&1 >/dev/null; then
     test -z "$TMUX" && (tmux attach || tmux)

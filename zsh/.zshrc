@@ -4,8 +4,8 @@
 # Path to your oh-my-zsh installation.
   export ZSH="/home/knothhe/.oh-my-zsh"
   export LANG=en_US.utf8
+  export LC_CTYPE=zh_CN.UTF-8
   export EDITOR=nvim
-
   export PATH=~/bin:"$PATH"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
@@ -69,7 +69,8 @@ ZSH_THEME="nametime"
 plugins=(
     colored-man-pages
     zsh-syntax-highlighting
-    sh-autosuggestions
+    zsh-autosuggestions
+    archlinux
     extract
     tmux
     git
@@ -114,22 +115,26 @@ fi
 
 # neovim alias
 if type nvim > /dev/null 2>&1; then
+    alias vi='nvim'
     alias vim='nvim'
-    alias vi=nvim
-    alias vim=nvim
     alias oldvim='\vim'
 fi
 
-alias pc=proxychains4
-alias gp='proxychains4 git push'
+if type musicbox > /dev/null 2>&1; then
+    alias music='musicbox'
+fi
+
+alias pc='proxychains4'
 alias lc='leetcode'
 alias plc='proxychains4 leetcode'
-alias open='explorer.exe'
+alias open='thunar .'
 alias bc='bc -l'
 alias c='clear'
 alias zshconfig='vi ~/.zshrc'
 alias tmuxconfig='vi ~/.tmux.conf'
 alias say='fortune | cowsay | lolcat'
+alias today='date +%Y-%m-%d'
+alias emacs='emacs -nw'
 
 alias ...='cd ../../../'
 alias ....='cd ../../../../'
@@ -137,13 +142,14 @@ alias .....='cd ../../../../../'
 alias .4='cd ../../../../'
 alias .5='cd ../../../../../'
 
+alias chb='sudo chbrightness.sh'
+alias cub='currentbrightness.sh'
 
-if which tmux 2>&1 >/dev/null; then
-    test -z "$TMUX" && (tmux attach || tmux)
-fi
 
-#if [ $TERM != "screen-256color" ] && [  $TERM != "screen" ]; then
-#tmux attach || tmux new; exit
-#fi
+# # TMUX
+# if which tmux >/dev/null 2>&1; then
+#     #if not inside a tmux session, and if no session is started, start a new session
+#     test -z "$TMUX" && (tmux attach || tmux new-session)
+# fi
 
-cd ~
+source /usr/share/nvm/init-nvm.sh

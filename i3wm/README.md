@@ -1,5 +1,7 @@
 # Files
 ```
+~/.config/polybar/launch.sh
+~/.config/polybar/config
 ~/.profile
 ~/.Xmodmap
 # ~/.i3status.conf
@@ -11,6 +13,7 @@
 # Install
 
 ```
+polybar
 i3-manjaro
 i3-gaps
 compton

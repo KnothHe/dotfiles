@@ -92,3 +92,31 @@ ln ./misc/proxychains4.conf /etc/
 ```sh
 ln ./misc/.dir_colors ~/
 ```
+
+## i3wm
+
+### Files
+
+```
+~/.config/polybar/launch.sh
+~/.config/polybar/config
+~/.profile
+~/.Xmodmap
+# ~/.i3status.conf
+~/.config/i3/config
+/etc/X11/xorg.conf.d/30-touchpad.conf
+~/bin/i3exit.sh
+```
+
+### Install
+
+```
+dunst
+flameshot
+polybar
+i3-manjaro
+i3-gaps
+compton
+ttf-font-awesome
+rofi
+```

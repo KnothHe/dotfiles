@@ -11,7 +11,7 @@
     ignore_newline = no
     # geometry = "200x5-6+30"
     geometry = "300x5-20+40"
-    transparency = 40
+    # transparency = 40
     idle_threshold = 120
     monitor = 0
     follow = mouse

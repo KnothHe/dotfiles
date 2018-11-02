@@ -9,6 +9,14 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+# start-up
+# exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpapers/wallpaper.jpg
+exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpapers/wallpaper.png
+exec_always --no-startup-id compton -b
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id exec killall -q noti
+exec_always --no-startup-id dunst -config $HOME/.config/dunst/dunstrc
+
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -20,7 +28,6 @@ set $mod Mod4
 # font pango:DejaVu Sans Mono 11
 
 # Font awesome icon : https://fontawesome.com/cheatsheet
-
 # aesthetics
 font pango:$FOUNT,Font Awesome 5 Free 12
 
@@ -83,10 +90,8 @@ bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
 bindsym $mod+b split h
-
 # split in vertical orientation
 bindsym $mod+v split v
-
 # split toggle
 bindsym $mod+t split toggle
 
@@ -195,11 +200,12 @@ bindsym $mod+r mode "resize"
 
 mode "mode_launcher" {
     bindsym c exec google-chrome-stable, mode "default"
+    bindsym f exec firefox, mode "default"
     bindsym t exec xfce4-taskmanager, mode "default"
     bindsym s exec xfce4-settings-manager, mode "default"
-    bindsym f exec firefox, mode "default"
     bindsym h exec thunar, mode "default"
     bindsym z exec zeal, mode "default"
+    bindsym p exec pix, mode "default"
 
     bindsym Escape mode "default"
     bindsym Return mode "default"
@@ -270,16 +276,7 @@ bindsym $mod+p          exec flameshot gui
 # for polybar, use script toggle_polybar.sh, invalid
 # bindsym $mod+n exec toggle_polybar.sh
 
-# start-up
-exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpapers/wallpaper.jpg
-# exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpapers/wallpaper.png
-exec_always --no-startup-id compton -b
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always --no-startup-id exec killall -q noti
-exec_always --no-startup-id dunst -config $HOME/.config/dunst/dunstrc
-
 # 把当前窗口设为便笺本
 bindsym $mod+Shift+minus move scratchpad
-
 # 呼出第一个便笺本
 bindsym $mod+minus scratchpad show

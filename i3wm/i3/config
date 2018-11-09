@@ -199,13 +199,15 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 mode "mode_launcher" {
+    bindsym a exec calibre, mode "default"
     bindsym c exec google-chrome-stable, mode "default"
     bindsym f exec firefox, mode "default"
-    bindsym t exec xfce4-taskmanager, mode "default"
-    bindsym s exec xfce4-settings-manager, mode "default"
     bindsym h exec thunar, mode "default"
-    bindsym z exec zeal, mode "default"
+    bindsym t exec xfce4-taskmanager, mode "default"
+    bindsym n exec nm-applet, mode "default"
     bindsym p exec pix, mode "default"
+    bindsym s exec xfce4-settings-manager, mode "default"
+    bindsym z exec zeal, mode "default"
 
     bindsym Escape mode "default"
     bindsym Return mode "default"
@@ -213,7 +215,7 @@ mode "mode_launcher" {
 
 bindsym $mod+o mode "mode_launcher"
 
-set $mode_system System (l) lock, (e) exit, (s) suspend, (h) hibernate, (r) reboot, (p) ower off 
+set $mode_system System (l)ock, (e)xit, (s)uspend, (h)ibernate, (r)eboot, (p)ower off 
 mode "$mode_system" {
     bindsym l exec --no-startup-id i3exit lock, mode "default"
     bindsym e exec --no-startup-id i3exit logout, mode "default"
@@ -260,15 +262,15 @@ bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
 bindsym XF86AudioMute exec amixer set Master toggle 
 
 # Screen brightness controls
-bindsym XF86MonBrightnessUp exec "xbacklight -inc 5"
-bindsym XF86MonBrightnessDown exec "xbacklight -dec 5"
-bindsym shift+F12 exec "xbacklight -inc 5"
-bindsym shift+F11 exec "xbacklight -dec 5"
+bindsym shift+F12 exec xbacklight -inc 5
+bindsym shift+F11 exec xbacklight -dec 5
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 
 # screenshot
 bindsym Print           exec flameshot full -c -p ~/Pictures/flameshot/full
 bindsym $mod+p          exec flameshot gui
-# bindsym $mod+shift+p  exec flameshot screen -r -c -p ~/Pictures/flameshot/screen
+bindsym $mod+shift+p    exec xfce4-screenshooter -w
 
 # toggle bar
 # for i3bar

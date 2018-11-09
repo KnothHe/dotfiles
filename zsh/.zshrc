@@ -1,12 +1,8 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH="/home/knothhe/.oh-my-zsh"
-  export LANG=en_US.utf8
-  export LC_CTYPE=zh_CN.UTF-8
-  export EDITOR=nvim
-  export PATH=~/bin:"$PATH"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -41,7 +37,7 @@ ZSH_THEME="nametime"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -67,9 +63,9 @@ ZSH_THEME="nametime"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    colored-man-pages
     zsh-syntax-highlighting
     zsh-autosuggestions
+    colored-man-pages
     archlinux
     extract
     tmux
@@ -85,20 +81,22 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_CTYPE=zh_CN.UTF-8
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+# Preferred editor
+export EDITOR='nvim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
+export SSH_KEY_PATH="$HOME/.ssh/rsa_id"
+
+# colors
+if [ -f $HOME/.dir_colors ]; then
+    eval `dircolors $HOME/.dir_colors`
+fi
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -106,12 +104,8 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-if [ -f ~/.dir_colors ]; then
-    eval `dircolors ~/.dir_colors`
-fi
+alias zshconfig="$EDITOR $HOME/.zshrc"
+alias ohmyzsh="$EDITOR $HOME/.oh-my-zsh"
 
 # neovim alias
 if type nvim > /dev/null 2>&1; then
@@ -130,8 +124,7 @@ alias plc='proxychains4 leetcode'
 alias open='thunar .'
 alias bc='bc -l'
 alias c='clear'
-alias zshconfig='vi ~/.zshrc'
-alias tmuxconfig='vi ~/.tmux.conf'
+alias tmuxconfig='vi $HOME/.tmux.conf'
 alias say='fortune | cowsay | lolcat'
 alias today='date +%Y-%m-%d'
 alias emacs='emacs -nw'
@@ -145,6 +138,7 @@ alias .5='cd ../../../../../'
 alias chb='sudo chbrightness.sh'
 alias cub='currentbrightness.sh'
 
+alias wpwd='w=$(pwd)'
 
 # # TMUX
 # if which tmux >/dev/null 2>&1; then
@@ -152,4 +146,9 @@ alias cub='currentbrightness.sh'
 #     test -z "$TMUX" && (tmux attach || tmux new-session)
 # fi
 
+# nvm for nvim
 source /usr/share/nvm/init-nvm.sh
+
+# size of saved history
+HISTSIZE=100000
+SAVEHIST=100000

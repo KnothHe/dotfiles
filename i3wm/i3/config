@@ -10,8 +10,8 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 # start-up
-# exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpapers/wallpaper.jpg
-exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpapers/wallpaper.png
+exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpapers/wallpaper.jpg
+# exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpapers/wallpaper.png
 exec_always --no-startup-id compton -b
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id exec killall -q noti

@@ -36,7 +36,8 @@ height = 27
 radius = 6.0
 fixed-center = false
 
-background = ${colors.background}
+background = #a0000000
+;background = ${colors.background}
 foreground = ${colors.foreground}
 
 line-size = 3
@@ -61,8 +62,8 @@ modules-right = xbacklight pulseaudio memory cpu temperature battery  date
 
 tray-position = right
 tray-padding = 2
-;tray-transparent = true
-;tray-background = #0063ff
+tray-transparent = false
+tray-background = #4d4a43
 
 ;wm-restack = bspwm
 ;wm-restack = i3

@@ -106,6 +106,7 @@ ln ./misc/.dir_colors ~/
 ~/.config/i3/config
 /etc/X11/xorg.conf.d/30-touchpad.conf
 ~/bin/i3exit.sh
+~/.config/dunst/dunstrc
 ```
 
 ### Install

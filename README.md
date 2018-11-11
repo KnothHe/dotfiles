@@ -107,6 +107,7 @@ ln ./misc/.dir_colors ~/
 /etc/X11/xorg.conf.d/30-touchpad.conf
 ~/bin/i3exit.sh
 ~/.config/dunst/dunstrc
+~/.config/compton.conf
 ```
 
 ### Install

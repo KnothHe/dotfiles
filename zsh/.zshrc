@@ -37,7 +37,7 @@ ZSH_THEME="nametime"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -112,21 +112,34 @@ if type nvim > /dev/null 2>&1; then
     alias vi='nvim'
     alias vim='nvim'
     alias oldvim='\vim'
+    alias less='/usr/share/nvim/runtime/macros/less.sh'
 fi
 
 if type musicbox > /dev/null 2>&1; then
     alias music='musicbox'
 fi
 
+if type leetcode > /dev/null 2>&1; then
+    alias lc='leetcode'
+    alias plc='proxychains4 leetcode'
+    alias lcshow='leetcode show -gxe'
+fi
+
+if type thunar > /dev/null 2>&1; then
+    alias open='thunar .'
+fi
+
+if type i3 > /dev/null 2&>1; then
+    alias i3config="$EDITOR $HOME/.config/i3/config"
+fi
+
 alias pc='proxychains4'
-alias lc='leetcode'
-alias plc='proxychains4 leetcode'
-alias open='thunar .'
+
 alias bc='bc -l'
 alias c='clear'
+alias today='date +%Y-%m-%d'
 alias tmuxconfig='vi $HOME/.tmux.conf'
 alias say='fortune | cowsay | lolcat'
-alias today='date +%Y-%m-%d'
 alias emacs='emacs -nw'
 
 alias ...='cd ../../../'
@@ -140,6 +153,9 @@ alias cub='currentbrightness.sh'
 
 alias wpwd='w=$(pwd)'
 
+alias mv=' timeout 8 mv -iv'
+alias rm=' noglob timeout 3 rm -Iv --one-file-system'
+
 # # TMUX
 # if which tmux >/dev/null 2>&1; then
 #     #if not inside a tmux session, and if no session is started, start a new session
@@ -147,8 +163,12 @@ alias wpwd='w=$(pwd)'
 # fi
 
 # nvm for nvim
-source /usr/share/nvm/init-nvm.sh
+if [ -f /usr/share/nvm/init-nvm.sh ]; then
+    source /usr/share/nvm/init-nvm.sh
+fi
 
 # size of saved history
 HISTSIZE=100000
 SAVEHIST=100000
+
+source /usr/share/doc/pkgfile/command-not-found.zsh

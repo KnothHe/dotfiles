@@ -144,6 +144,7 @@ Plug 'haya14busa/is.vim'
 " misc
 Plug 'Yggdroot/LeaderF'
 Plug 'echuraev/translate-shell.vim', { 'do': 'wget -O ~/.vim/trans git.io/trans && chmod +x ~/.vim/trans' }
+Plug 'vim-scripts/DrawIt'
 " Plug 'w0rp/ale')
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'

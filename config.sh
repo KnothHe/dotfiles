@@ -9,6 +9,9 @@ function hardlink {
     ln $dotFile $cfgFile
 }
 
+# if config directory is not exist, creat this directory.
+# if config file has already exist, rename it as origName.orgi.
+# finally create softlink of config file.
 function softlink {
     local cfgFile="$cfgDir/$cfgName"
     if [ -e $cfgFile -a ! -L $cfgFile ]; then
@@ -93,34 +96,38 @@ $(softlink)
 
 echo "***** Oh-my-zsh configuration is completed *****"
 
-# i3wm
-
-echo "----- Start configuring i3wm -----"
-
 # i3wm config
+if command -v i3 >/dev/null 2>&1; then
 
-cfgName="config"
-cfgDir="$HOME/.config/i3"
-dotFile="$(pwd)/i3wm/i3/config"
-$(softlink)
+    echo "----- Start configuring i3wm -----"
 
-# scripts
-cfgDir="$HOME/bin"
-cfgName=i3exit.sh
-dotFile=$(pwd)/i3wm/i3/i3exit.sh
-$(softlink)
+    cfgName="config"
+    cfgDir="$HOME/.config/i3"
+    dotFile="$(pwd)/i3wm/i3/config"
+    $(softlink)
+
+    # scripts
+    cfgDir="$HOME/bin"
+    cfgName=i3exit.sh
+    dotFile=$(pwd)/i3wm/i3/i3exit.sh
+    $(softlink)
+
+    echo "***** i3wm configuration is completed *****"
+fi
 
 # polybar config
-cfgDir="$HOME/.config/polybar"
-cfgName="config"
-dotFile="$(pwd)/i3wm/polybar/config"
-$(softlink)
+if command -v polybar >/dev/null 2>&1; then
+    cfgDir="$HOME/.config/polybar"
+    cfgName="config"
+    dotFile="$(pwd)/i3wm/polybar/config"
+    $(softlink)
 
-# polybar launch.sh
-cfgDir="$HOME/.config/polybar"
-cfgName="launch.sh"
-dotFile="$(pwd)/i3wm/polybar/launch.sh"
-$(softlink)
+    # polybar launch.sh
+    cfgDir="$HOME/.config/polybar"
+    cfgName="launch.sh"
+    dotFile="$(pwd)/i3wm/polybar/launch.sh"
+    $(softlink)
+fi
 
 # .Xmodmap
 cfgDir="$HOME"
@@ -129,16 +136,20 @@ dotFile="$(pwd)/i3wm/.Xmodmap"
 $(softlink)
 
 # compton.conf
-cfgDir="$HOME/.config"
-cfgName="compton.conf"
-dotFile="$(pwd)/i3wm/compton.conf"
-$(softlink)
+if command -v compton >/dev/null 2>&1; then
+    cfgDir="$HOME/.config"
+    cfgName="compton.conf"
+    dotFile="$(pwd)/i3wm/compton.conf"
+    $(softlink)
+fi
 
 # dunstrc
-cfgDir="$HOME/.config/dunst"
-cfgName="dunstrc"
-dotFile="$(pwd)/i3wm/dunstrc"
-$(softlink)
+if command -v dunst >/dev/null 2>&1; then
+    cfgDir="$HOME/.config/dunst"
+    cfgName="dunstrc"
+    dotFile="$(pwd)/i3wm/dunstrc"
+    $(softlink)
+fi
 
 # .profile
 cfgDir="$HOME"
@@ -146,7 +157,6 @@ cfgName=".profile"
 dotFile="$(pwd)/i3wm/.profile"
 $(softlink)
 
-echo "***** i3wm configuration is completed *****"
 
 # misc
 

@@ -132,7 +132,7 @@ Plug 'plasticboy/vim-markdown', { 'for' : 'markdown' }
 Plug 'iamcco/mathjax-support-for-mkdp', { 'for' : 'markdown' }
 Plug 'iamcco/markdown-preview.vim', { 'for' : 'markdown' }
 " UI
-Plug 'tomasr/molokai'
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'luochen1990/rainbow'
@@ -149,6 +149,7 @@ Plug 'vim-scripts/DrawIt'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/vim-easy-align'
+Plug 'itchyny/calendar.vim'
 if has('unix')
     Plug 'vim-scripts/fcitx.vim'
 endif
@@ -220,10 +221,8 @@ let g:vim_markdown_conceal = 0
 let g:vim_markdown_toc_autofit = 1
 " }}}
 
-" vim-molokai {{{
-let g:molokai_original = 1
-let g:rehash256 = 1
-colorscheme molokai
+" UI-theme {{{
+colorscheme dracula
 " }}}
 
 " Limelight {{{
@@ -282,7 +281,7 @@ let g:trans_bin = "~/.vim"
 nnoremap <silent> <leader>tt :Trans -t zh-CN<CR>
 vnoremap <silent> <leader>tt :Trans -t zh-CN<CR>
 nnoremap <silent> <leader>td :TransSelectDirection<CR>
-vnoremap <silent> <leader>td :TransSelectDirection<CR> 
+vnoremap <silent> <leader>td :TransSelectDirection<CR>
 " }}}
 
 " MISC {{{

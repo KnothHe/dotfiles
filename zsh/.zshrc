@@ -1,6 +1,10 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+if [ -d "$HOME/Applications" ]; then
+    export PATH=$HOME/Applications:$PATH
+fi
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -113,6 +117,7 @@ if type nvim > /dev/null 2>&1; then
     alias vim='nvim'
     alias oldvim='\vim'
     alias less='/usr/share/nvim/runtime/macros/less.sh'
+    alias viconfig="$EDITOR ~/.config/nvim/init.vim"
 fi
 
 if type musicbox > /dev/null 2>&1; then
@@ -133,20 +138,24 @@ if type i3 > /dev/null 2&>1; then
     alias i3config="$EDITOR $HOME/.config/i3/config"
 fi
 
+if type exa > /dev/null 2&>1; then
+    alias exa='exa -l'
+fi
+
 alias pc='proxychains4'
 
 alias bc='bc -l'
 alias c='clear'
 alias today='date +%Y-%m-%d'
-alias tmuxconfig='vi $HOME/.tmux.conf'
+alias tmuxconfig="$EDITOR $HOME/.tmux.conf"
 alias say='fortune | cowsay | lolcat'
 alias emacs='emacs -nw'
 
-alias ...='cd ../../../'
-alias ....='cd ../../../../'
-alias .....='cd ../../../../../'
-alias .4='cd ../../../../'
-alias .5='cd ../../../../../'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+alias .....='cd ../../../../'
+alias .4='cd ../../../'
+alias .5='cd ../../../../'
 
 alias chb='sudo chbrightness.sh'
 alias cub='currentbrightness.sh'
@@ -156,12 +165,6 @@ alias wpwd='w=$(pwd)'
 alias mv=' timeout 8 mv -iv'
 alias rm=' noglob timeout 3 rm -Iv --one-file-system'
 
-# # TMUX
-# if which tmux >/dev/null 2>&1; then
-#     #if not inside a tmux session, and if no session is started, start a new session
-#     test -z "$TMUX" && (tmux attach || tmux new-session)
-# fi
-
 # nvm for nvim
 if [ -f /usr/share/nvm/init-nvm.sh ]; then
     source /usr/share/nvm/init-nvm.sh
@@ -170,5 +173,3 @@ fi
 # size of saved history
 HISTSIZE=100000
 SAVEHIST=100000
-
-source /usr/share/doc/pkgfile/command-not-found.zsh

@@ -122,3 +122,17 @@ compton
 ttf-font-awesome
 rofi
 ```
+
+## Theme 
+
+### Icon theme
+
+Papirus-Dark
+
+### window theme
+
+Arc-Dark
+
+### Cursor theme
+
+breeze

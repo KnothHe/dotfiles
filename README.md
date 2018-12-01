@@ -121,9 +121,19 @@ i3-gaps
 compton
 ttf-font-awesome
 rofi
+feh
+ristretto
+calibre
+xorg-xbacklight
 ```
 
-## Theme 
+- rofi theme
+
+```sh
+rofi-theme-selector
+```
+
+## Theme
 
 ### Icon theme
 
@@ -136,3 +146,83 @@ Arc-Dark
 ### Cursor theme
 
 breeze
+
+## Packages
+
+- pacman
+
+```
+shadowsocks
+yay
+arc-gtk-theme
+noto-fonts
+noto-fonts-cjk
+noto-fonts-emoji
+adobe-source-code-pro
+google-chrome
+fzf
+tldr
+texlive-most
+texlive-lang
+neovim
+qtcreator
+visual-studio-code-bin
+dropbox
+emacs
+intellij-idea-community-edition
+pycharm-community-edition
+```
+
+## Github Packages
+
+```
+https://github.com/arcticicestudio/nord-xfce-terminal.git
+run ./install.sh
+```
+
+## nvm
+
+- install
+
+    nvm
+
+- command
+
+``` sh
+nvm ls-remote
+nvm install -v 10
+```
+
+## grub
+
+- [link](https://www.gnome-look.org/browse/cat/109/)
+
+- choose blur grub
+
+```sh
+./install.sh
+sudo update-grub
+```
+
+## fcitx
+
+### install
+
+- install
+    - fcitx-im
+    - fcitx-rime
+    - fcitx-configtool
+
+- skin
+
+```sh
+git clone https://github.com/fcitx/fcitx-artwork
+cd fcitx-artwork
+cp -r skin ~/.config/fcitx/
+```
+
+## docker
+
+```sh
+sudo usermod -aG docker your_username 
+```

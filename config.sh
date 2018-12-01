@@ -1,14 +1,5 @@
 #!/bin/bash
 
-function hardlink {
-    local cfgFile="$cfgDir/$cfgName"
-    if [ -e $cfgFile ]; then
-        rm $cfgFile
-    fi
-
-    ln $dotFile $cfgFile
-}
-
 # if config directory is not exist, creat this directory.
 # if config file has already exist, rename it as origName.orgi.
 # finally create softlink of config file.
@@ -24,144 +15,77 @@ function softlink {
     fi
 
     ln -s $dotFile $cfgFile
+
+    return 0
 }
 
-# proxychains
-pc="proxychains"
-if command -v proxychains >/dev/null 2>&1; then
-    usePC="proxychains"
-fi
+cfgDirs=(   "$HOME/.config/nvim" \
+            "$HOME/.local/share/nvim/site/autoload" \
+            "$HOME" \
+            "$HOME/.config/tmux/tmux-powerline/themes" \
+            "$HOME" \
+            "$HOME/.oh-my-zsh/custom/themes" \
+            "$HOME/.config/i3" \
+            "$HOME/bin" \
+            "$HOME/.config/polybar" \
+            "$HOME/.config/polybar" \
+            "$HOME/bin" \
+            "$HOME" \
+            "$HOME/.config" \
+            "$HOME/.config/dunst" \
+            "$HOME" \
+            "$HOME/.config" \
+            "$HOME" \
+)
 
-# nvim
+cfgNames=(  "init.vim" \
+            "plug.vim" \
+            ".tmux.conf" \
+            "default.sh" \
+            ".zshrc" \
+            "nametime.zsh-theme" \
+            "config" \
+            "i3exit" \
+            "config" \
+            "launch.sh" \
+            "toggle_polybar.sh" \
+            ".Xmodmap" \
+            "compton.conf" \
+            "dunstrc" \
+            ".profile" \
+            "i3-scrot.conf" \
+            ".dir_colors" \
+)
 
-# init.vim
-echo "----- Start configuring neovim -----"
-cfgDir="$HOME/.config/nvim"
-cfgName="init.vim"
-dotFile="$(pwd)/nvim/init.vim"
-$(softlink)
+dotFiles=(  "nvim/init.vim" \
+            "nvim/plug.vim" \
+            "tmux/tmux.conf" \
+            "tmux/default.sh" \
+            "zsh/zshrc" \
+            "zsh/nametime.zsh-theme" \
+            "i3wm/i3/config" \
+            "i3wm/i3/i3exit.sh" \
+            "i3wm/polybar/config" \
+            "i3wm/polybar/launch.sh" \
+            "i3wm/polybar/toggle_polybar.sh"
+            "i3wm/Xmodmap" \
+            "i3wm/compton.conf" \
+            "i3wm/dunstrc" \
+            "i3wm/profile" \
+            "i3wm/i3-scrot.conf" \
+            "dir_colors" \
+)
 
-# plug.vim
-cfgDir="$HOME/.local/share/nvim/site/autoload/"
-cfgName="plug.vim"
-dotFile="$(pwd)/nvim/plug.vim"
-$(hardlink)
+for i in "${!cfgDirs[@]}";
+do
+    cfgDir="${cfgDirs[$i]}"
+    cfgName="${cfgNames[$i]}"
+    dotFile="$(pwd)/${dotFiles[$i]}"
 
-echo "***** Neovim configuration is completed *****"
+    softlink
 
-# tmux
-
-echo "----- Start configuring tmux -----"
-
-# tmux.conf
-tmuxCfgFile="$HOME/.tmux.conf"
-if [ -e tmuxCfgFile ]; then
-    rm $tmuxCfgFile
-    ln -s $(pwd)/tmux/.tmux.conf $tmuxCfgFile
-fi
-
-# tmux-powerline
-tmuxPlThemeCfgDir="$HOME/.config/tmux/tmux-powerline/themes"
-tmuxPlThemeCfgFile=$tmuxPlThemeCfgDir/default.sh
-tmuxPlThemeDotfile=$(pwd)/tmux/default.sh
-if command -v git >/dev/null 2>&1; then
-    if [ ! -e $tmuxPlThemeCfgFile ]; then
-        $usePC git clone https://github.com/erikw/tmux-powerline.git \
-            ~/.config/tmux/tmux-powerline
-    fi
-    if [ -e $tmuxPlThemeCfgFile ]; then
-        rm $tmuxPlThemeCfgFile
-    fi
-    ln -s $tmuxPlThemeDotfile $tmuxPlThemeCfgFile
-fi
-
-echo "***** Tmux configuration is completed *****"
-
-# oh-my-zsh
-
-echo "----- Start configuring oh-my-zsh -----"
-
-# .zshrc
-cfgName=".zshrc"
-cfgDir="$HOME"
-dotFile="$(pwd)/zsh/.zshrc"
-$(softlink)
-
-# theme
-
-cfgName="nametime.zsh-theme"
-cfgDir="$HOME/.oh-my-zsh/custom/themes"
-dotFile="$(pwd)/zsh/nametime.zsh-theme"
-$(softlink)
-
-echo "***** Oh-my-zsh configuration is completed *****"
-
-# i3wm config
-if command -v i3 >/dev/null 2>&1; then
-
-    echo "----- Start configuring i3wm -----"
-
-    cfgName="config"
-    cfgDir="$HOME/.config/i3"
-    dotFile="$(pwd)/i3wm/i3/config"
-    $(softlink)
-
-    # scripts
-    cfgDir="$HOME/bin"
-    cfgName=i3exit.sh
-    dotFile=$(pwd)/i3wm/i3/i3exit.sh
-    $(softlink)
-
-    echo "***** i3wm configuration is completed *****"
-fi
-
-# polybar config
-if command -v polybar >/dev/null 2>&1; then
-    cfgDir="$HOME/.config/polybar"
-    cfgName="config"
-    dotFile="$(pwd)/i3wm/polybar/config"
-    $(softlink)
-
-    # polybar launch.sh
-    cfgDir="$HOME/.config/polybar"
-    cfgName="launch.sh"
-    dotFile="$(pwd)/i3wm/polybar/launch.sh"
-    $(softlink)
-fi
-
-# .Xmodmap
-cfgDir="$HOME"
-cfgName="$.Xmodmap"
-dotFile="$(pwd)/i3wm/.Xmodmap"
-$(softlink)
-
-# compton.conf
-if command -v compton >/dev/null 2>&1; then
-    cfgDir="$HOME/.config"
-    cfgName="compton.conf"
-    dotFile="$(pwd)/i3wm/compton.conf"
-    $(softlink)
-fi
-
-# dunstrc
-if command -v dunst >/dev/null 2>&1; then
-    cfgDir="$HOME/.config/dunst"
-    cfgName="dunstrc"
-    dotFile="$(pwd)/i3wm/dunstrc"
-    $(softlink)
-fi
-
-# .profile
-cfgDir="$HOME"
-cfgName=".profile"
-dotFile="$(pwd)/i3wm/.profile"
-$(softlink)
-
-
-# misc
-
-# .dir_colors
-cfgDir="$HOME"
-cfgName=".dir_colors"
-dotFile="$(pwd)/misc/.dir_colors"
-$(softlink)
+    echo -en "\E[41m\E[37m$cfgDir/$cfgName\E(B\E[m"
+    echo -en "\E[32m and \E(B\E[m"
+    echo -en "\E[43m\E[30m$dotFile\E(B\E[m"
+    echo ""
+done

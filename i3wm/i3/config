@@ -21,7 +21,7 @@ set $mod Mod4
 
 # Font awesome icon : https://fontawesome.com/cheatsheet
 # aesthetics
-# font pango:$FOUNT,Font Awesome 5 Free 12
+# font pango:$FOUNT, Font Awesome 5 Free 12
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -80,10 +80,10 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# split in horizontal orientation
-bindsym $mod+b split h
-# split in vertical orientation
-bindsym $mod+v split v
+## split in horizontal orientation
+#bindsym $mod+b split h
+## split in vertical orientation
+#bindsym $mod+v split v
 # split toggle
 bindsym $mod+t split toggle
 
@@ -109,16 +109,16 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1: Main"
-set $ws2 "2: Terminal"
-set $ws3 "3: Browser"
-set $ws4 "4: Audio"
-set $ws5 "5: Picture"
-set $ws6 "6: Video"
-set $ws7 "7: Chat"
-set $ws8 "8: MISC-III"
-set $ws9 "9: MISC-II"
-set $ws10 "10: MISC-I"
+set $ws1 "1: Tux"
+set $ws2 "2: Cat"
+set $ws3 "3: Crow"
+set $ws4 "4: Dove"
+set $ws5 "5: Fish"
+set $ws6 "6: Frog"
+set $ws7 "7: Ghost"
+set $ws8 "8: Hippo"
+set $ws9 "9: Otter"
+set $ws10 "10: Spider"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -197,11 +197,13 @@ mode "mode_launcher" {
     bindsym a exec xfce4-appfinder, mode "default"
     bindsym b exec calibre, mode "default"
     bindsym c exec google-chrome-stable, mode "default"
-    bindsym e exec emacs, mode "default"
+    bindsym d exec dropbox, mode "default"
+    # bindsym e exec "env LC_CTYPE=zh_CN.UTF_8 emacs", mode "default"
     bindsym f exec firefox, mode "default"
     bindsym g exec gimp, mode "default"
     bindsym h exec thunar, mode "default"
     bindsym i exec idea, mode "default"
+    # bindsym m exec musicbox, mode "default"
     bindsym n exec nm-applet, mode "default"
     bindsym p exec pycharm, mode "default"
     bindsym q exec qtcreator, mode "default"
@@ -238,14 +240,14 @@ set $mode_screen (p) screen, (c) pick color, (w) current window
 mode "$mode_screen" {
     bindsym p exec flameshot gui, mode "default"
     bindsym c exec deepin-picker, mode "default"
-    bindsym w exec xfce4-screenshooter -w, mode "default"
+    bindsym w exec i3-scrot -w, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
 bindsym $mod+p mode "$mode_screen"
-bindsym Print           exec flameshot full -c -p ~/Pictures/flameshot/full
+bindsym Print           exec i3-scrot, mode "default"
 
 # system
 set $mode_system System (l)ock, (e)xit, (s)uspend, (h)ibernate, (r)eboot, (p)ower off
@@ -262,6 +264,7 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 bindsym $mod+Shift+x mode "$mode_system"
+
 
 for_window [class="Xfce4-appfinder"] floating enable
 
@@ -306,7 +309,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 # for i3bar
 # bindsym $mod+n bar mode toggle
 # for polybar, use script toggle_polybar.sh, invalid
-# bindsym $mod+n exec toggle_polybar.sh
+bindsym $mod+b exec "$HOME/bin/toggle_polybar.sh", mode "default"
 
 # set current window as scratch pad
 bindsym $mod+minus move scratchpad
@@ -315,10 +318,11 @@ bindsym $mod+equal scratchpad show
 
 # start-up
 exec --no-startup-id compton -b
+exec --no-startup-id nm-applet
+exec --no-startup-id dropbox
 exec_always --no-startup-id exec killall -q noti
 exec_always --no-startup-id dunst -config $HOME/.config/dunst/dunstrc
-exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpapers/wallpaper.jpg
-# exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpapers/wallpaper.png
+exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpapers/the_liar_that_start_it_all.jpg
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # class                 border  backgr. text    indicator child_border

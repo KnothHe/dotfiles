@@ -5,6 +5,10 @@ if [ -d "$HOME/Applications" ]; then
     export PATH=$HOME/Applications:$PATH
 fi
 
+if [ -d "$HOME/.gem/ruby/2.5.0/bin" ]; then
+    export PATH=$HOME/.gem/ruby/2.5.0/bin:$PATH
+fi
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -86,7 +90,7 @@ source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
-export LC_CTYPE=zh_CN.UTF-8
+# env "LC_CTYPE=zh_CN.UTF-8" emacs
 
 # Preferred editor
 export EDITOR='nvim'
@@ -108,14 +112,14 @@ fi
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="$EDITOR $HOME/.zshrc"
-alias ohmyzsh="$EDITOR $HOME/.oh-my-zsh"
+alias zshconfig="$EDITOR $HOME/.zshrc" 
+alias ohmyzsh="$EDITOR $HOME/.oh-my-zsh" 
 
-# neovim alias
-if type nvim > /dev/null 2>&1; then
-    alias vi='nvim'
-    alias vim='nvim'
-    alias oldvim='\vim'
+# neovim alias 
+if type nvim > /dev/null 2>&1; then 
+    alias vi='nvim' 
+    alias vim='nvim' 
+    alias oldvim='\vim' 
     alias less='/usr/share/nvim/runtime/macros/less.sh'
     alias viconfig="$EDITOR ~/.config/nvim/init.vim"
 fi
@@ -134,11 +138,11 @@ if type thunar > /dev/null 2>&1; then
     alias open='thunar .'
 fi
 
-if type i3 > /dev/null 2&>1; then
+if type i3 > /dev/null 2>&1; then
     alias i3config="$EDITOR $HOME/.config/i3/config"
 fi
 
-if type exa > /dev/null 2&>1; then
+if type exa > /dev/null 2>&1; then
     alias exa='exa -l'
 fi
 

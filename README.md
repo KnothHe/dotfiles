@@ -226,3 +226,7 @@ cp -r skin ~/.config/fcitx/
 ```sh
 sudo usermod -aG docker your_username 
 ```
+
+## xfce4-terminal
+
+- terminalrc

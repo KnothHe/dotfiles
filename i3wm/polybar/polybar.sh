@@ -28,28 +28,23 @@ case $1 in
         fi
     ;;
     show)
-        echo "show"
         if [ -z $(xdo pid -a "polybar-bottom_eDP1") ] \
             && [ -z $(xdo pid -a "polybar-top_eDP1") ]; then
-             Terminate already running bar instances
+            # Terminate already running bar instances
             killall -q polybar
 
-             Wait until the processes have been shut down
+            # Wait until the processes have been shut down
             while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
-             Launch top bar
+            # Launch top bar
             polybar bottom &
             polybar top &
         elif [ -z $(xdo pid -a "polybar-bottom_eDP1") ]; then
-             Launch bottom bar
+            # Launch bottom bar
             polybar bottom &
-            polybar-msg -p $(xdo pid -a "polybar-top_eDP1") cmd show
         elif [ -z $(xdo pid -a "polybar-top_eDP1") ]; then
-             Launch top bar
+            # Launch top bar
             polybar top &
-            polybar-msg -p $(xdo pid -a "polybar-bottom_eDP1") cmd show
-        else
-            relaunch_all
         fi
     ;;
     hide)
@@ -67,3 +62,4 @@ case $1 in
         polybar top &
     ;;
 esac
+

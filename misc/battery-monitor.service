@@ -1,0 +1,12 @@
+[Unit]
+Description=Battery Monitor
+
+[Service]
+Type=simple
+ExecStart=/bin/bash /home/azer/localbin/battery-monitor.sh
+Restart=always
+RestartSec=10
+User=azer
+
+[Install]
+WantedBy=multi-user.target

@@ -65,7 +65,7 @@
     frame_width = 3
 
     # Defines color of the frame around the notification window.
-    frame_color = "#aaaaaa"
+    frame_color = "#222c31"
 
     # Define a color for the separator.
     # possible values are:
@@ -214,7 +214,7 @@
     # corners.
     # The radius will be automatically lowered if it exceeds half of the
     # notification height to avoid clipping text and/or icons.
-    corner_radius = 0
+    corner_radius = 6.0
 
     ### Legacy
 
@@ -259,19 +259,19 @@
     # Xev might be helpful to find names for keys.
 
     # Close notification.
-    close = ctrl+space
+    close = mod4+ctrl+space
 
     # Close all notifications.
-    close_all = ctrl+shift+space
+    close_all = mod4+ctrl+shift+space
 
     # Redisplay last message(s).
     # On the US keyboard layout "grave" is normally above TAB and left
     # of "1". Make sure this key actually exists on your keyboard layout,
     # e.g. check output of 'xmodmap -pke'
-    # history = ctrl+grave
+    history = mod4+ctrl+grave
 
     # Context menu.
-    context = ctrl+shift+period
+    context = mod4+ctrl+shift+period
 
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
@@ -279,7 +279,8 @@
 #    background = "#222222"
 #    foreground = "#888888"
     background = "#181818"
-    foreground = "#E3C7AF"
+#    foreground = "#E3C7AF"
+    foreground = "#FEA724"
     timeout = 5
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
@@ -288,7 +289,7 @@
 #    background = "#285577"
 #    foreground = "#ffffff"
     background = "#181818"
-    foreground = "#E3C7AF"
+    foreground = "#FEA724"
     timeout = 5
     # Icon for notifications with normal urgency, uncomment to enable
     #icon = /path/to/icon
@@ -297,7 +298,7 @@
 #    background = "#900000"
 #    foreground = "#ffffff"
     background = "#181818"
-    foreground = "#E3C7AF"
+    foreground = "#FEA724"
     frame_color = "#ff0000"
     timeout = 0
     # Icon for notifications with critical urgency, uncomment to enable

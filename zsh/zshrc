@@ -110,16 +110,14 @@ fi
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
-alias zshconfig="$EDITOR $HOME/.zshrc" 
-alias ohmyzsh="$EDITOR $HOME/.oh-my-zsh" 
+alias zshconfig="$EDITOR $HOME/.zshrc"
+alias ohmyzshconfig="$EDITOR $HOME/.oh-my-zsh"
 
-# neovim alias 
-if type nvim > /dev/null 2>&1; then 
-    alias vi='nvim' 
-    alias vim='nvim' 
-    alias oldvim='\vim' 
+# neovim alias
+if type nvim > /dev/null 2>&1; then
+    alias vi='nvim'
+    alias vim='nvim'
+    alias oldvim='\vim'
     alias less='/usr/share/nvim/runtime/macros/less.sh'
     alias viconfig="$EDITOR ~/.config/nvim/init.vim"
 fi
@@ -142,6 +140,10 @@ if type i3 > /dev/null 2>&1; then
     alias i3config="$EDITOR $HOME/.config/i3/config"
 fi
 
+if type polybar > /dev/null 2>&1; then
+    alias pbconfig="$EDITOR $HOME/.config/polybar/config"
+fi
+
 if type exa > /dev/null 2>&1; then
     alias exa='exa -l'
 fi
@@ -161,11 +163,6 @@ alias .....='cd ../../../../'
 alias .4='cd ../../../'
 alias .5='cd ../../../../'
 
-alias chb='sudo chbrightness.sh'
-alias cub='currentbrightness.sh'
-
-alias wpwd='w=$(pwd)'
-
 alias mv=' timeout 8 mv -iv'
 alias rm=' noglob timeout 3 rm -Iv --one-file-system'
 
@@ -173,6 +170,26 @@ alias rm=' noglob timeout 3 rm -Iv --one-file-system'
 if [ -f /usr/share/nvm/init-nvm.sh ]; then
     source /usr/share/nvm/init-nvm.sh
 fi
+
+if type kitty > /dev/null 2>&1; then
+    autoload -Uz compinit
+    compinit
+    # Completion for kitty
+    kitty + complete setup zsh | source /dev/stdin
+fi
+
+#if type wal > /dev/null 2>&1; then
+#    # Import colorscheme from 'wal' asynchronously
+#    # &   # Run the process in the background.
+#    # ( ) # Hide shell job control messages.
+#    (cat ~/.cache/wal/sequences &)
+
+##    # Alternative (blocks terminal for 0-3ms)
+##    cat ~/.cache/wal/sequences
+
+#    # To add support for TTYs this line can be optionally added.
+##    source ~/.cache/wal/colors-tty.sh
+#fi
 
 # size of saved history
 HISTSIZE=100000

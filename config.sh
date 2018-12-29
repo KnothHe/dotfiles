@@ -28,7 +28,6 @@ cfgDirs=(   "$HOME/.config/nvim" \
             "$HOME/.config/i3" \
             "$HOME/bin" \
             "$HOME/.config/polybar" \
-            "$HOME/.config/polybar" \
             "$HOME/bin" \
             "$HOME" \
             "$HOME/.config" \
@@ -47,8 +46,7 @@ cfgNames=(  "init.vim" \
             "config" \
             "i3exit" \
             "config" \
-            "launch.sh" \
-            "toggle_polybar.sh" \
+            "polybar-launch.sh" \
             ".Xmodmap" \
             "compton.conf" \
             "dunstrc" \
@@ -66,8 +64,7 @@ dotFiles=(  "nvim/init.vim" \
             "i3wm/i3/config" \
             "i3wm/i3/i3exit.sh" \
             "i3wm/polybar/config" \
-            "i3wm/polybar/launch.sh" \
-            "i3wm/polybar/toggle_polybar.sh"
+            "i3wm/polybar/polybar.sh" \
             "i3wm/Xmodmap" \
             "i3wm/compton.conf" \
             "i3wm/dunstrc" \

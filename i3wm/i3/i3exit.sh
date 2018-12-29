@@ -1,11 +1,11 @@
 #!/bin/sh
 lock() {
-    i3lock
+    i3lock -i ~/Pictures/wallpapers/lock.png
 }
 
 case "$1" in
     lock)
-        lock
+        xflock4
         ;;
     logout)
         i3-msg exit

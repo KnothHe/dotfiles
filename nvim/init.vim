@@ -78,6 +78,8 @@ noremap <Right> <NOP>
 " normal MISC {{{
 " set file encode
 set encoding=utf-8 fileencoding=uft-8
+" insert current date
+nnoremap <Leader>id "=strftime("%Y-%m-%d")<CR>P
 " }}}
 
 " Learn Vim the Hard Way {{{
@@ -133,6 +135,7 @@ Plug 'iamcco/mathjax-support-for-mkdp', { 'for' : 'markdown' }
 Plug 'iamcco/markdown-preview.vim', { 'for' : 'markdown' }
 " UI
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'sickill/vim-monokai', { 'as' : 'monokai' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'luochen1990/rainbow'
@@ -141,6 +144,8 @@ Plug 'Yggdroot/indentLine'
 " Plug 'tpope/vim-fugitive')
 " search highlight
 Plug 'haya14busa/is.vim'
+" color code and name highlight
+Plug 'chrisbra/Colorizer'
 " misc
 Plug 'Yggdroot/LeaderF'
 Plug 'echuraev/translate-shell.vim', { 'do': 'wget -O ~/.vim/trans git.io/trans && chmod +x ~/.vim/trans' }
@@ -221,8 +226,9 @@ let g:vim_markdown_conceal = 0
 let g:vim_markdown_toc_autofit = 1
 " }}}
 
-" UI-theme {{{
+" colorscheme {{{
 colorscheme dracula
+" colorscheme monokai
 " }}}
 
 " Limelight {{{
@@ -275,7 +281,7 @@ let g:ncm2_pyclang#database_path = [
 autocmd FileType c,cpp nnoremap <buffer> gd :<c-u>call ncm2_pyclang#goto_declaration()<cr>
 " }}}
 
-""" translate-shell {{{
+" translate-shell {{{
 let g:trans_bin = "~/.vim"
 
 nnoremap <silent> <leader>tt :Trans -t zh-CN<CR>

@@ -1,0 +1,80 @@
+{
+    "files.autoGuessEncoding": true,
+    "window.zoomLevel": 0,
+    "files.insertFinalNewline": true,
+    "editor.fontSize": 16,
+    "editor.formatOnType": false,
+    "editor.renderControlCharacters": false,
+    "editor.wordWrap": "on",
+    "editor.formatOnPaste": true,
+    "workbench.startupEditor": "newUntitledFile",
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.renderWhitespace": "all",
+    "java.errors.incompleteClasspath.severity": "ignore",
+    "vim.useSystemClipboard": true,
+    "files.autoSave": "afterDelay",
+    "editor.lineHeight": 25,
+    "editor.fontFamily": "'Source Code Variable', YouYuan, 'Courier New', monospace",
+    "markdown.preview.fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif, YouYuan",
+    "markdown.preview.fontSize": 16,
+    "markdown.extension.toc.unorderedList.marker": "+",
+    "vim.easymotionMarkerFontFamily": "'Source Code Variable'",
+    "[markdown]": {
+        "editor.wordWrap": "on",
+        "editor.quickSuggestions": true
+    },
+    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+    "window.menuBarVisibility": "toggle",
+    "window.title": "[>> ${dirty}${rootName}${separator}${activeEditorShort}${separator} <<]",
+    "latex-workshop.latex.tools": [{
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "xelatex",
+            "command": "xelatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ]
+        }
+    ],
+    "workbench.iconTheme": "vscode-great-icons",
+    "zenMode.centerLayout": false,
+    "vim.autoSwitchInputMethod.enable": true,
+    "vim.autoSwitchInputMethod.obtainIMCmd": "C:\\Tools\\misc\\im-select.exe",
+    "vim.autoSwitchInputMethod.switchIMCmd": "C:\\Tools\\misc\\im-select.exe {im}",
+    "vim.autoSwitchInputMethod.defaultIM": "1033",
+    "workbench.colorTheme": "Dracula",
+    "terminal.integrated.fontSize": 16,
+    "vim.changeWordIncludesWhitespace": true,
+    "workbench.statusBar.feedback.visible": false,
+    "workbench.tree.horizontalScrolling": true,
+    "update.channel": "none",
+    "workbench.tips.enabled": false,
+    "vim.leader": " ",
+    "vim.easymotion": true,
+    "vim.easymotionMarkerHeight": 20,
+    "vim.easymotionMarkerFontSize": "16",
+    "vim.easymotionMarkerForegroundColorTwoChar": "white",
+    "vim.easymotionMarkerForegroundColorOneChar": "white",
+    "vim.enableNeovim": true,
+    "vim.neovimPath": "/usr/bin/nvim",
+    "vim.foldfix": true
+}

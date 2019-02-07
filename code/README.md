@@ -1,3 +1,9 @@
+# List extensions
+
+```sh
+code --list-extensions
+```
+
 # Install extensions
 
 ```sh

@@ -196,8 +196,7 @@ mode "$mode_launcher" {
     bindsym n exec netease-cloud-music,                 mode "default"
     bindsym p exec pycharm,                             mode "default"
     bindsym q exec qtcreator,                           mode "default"
-    bindsym r exec shotwell,                            mode "default"
-    bindsym s exec xfce4-settings-manager,              mode "default"
+    bindsym s exec shotwell,                            mode "default"
     bindsym t exec $term htop,                          mode "default"
     bindsym v exec code,                                mode "default"
     bindsym z exec zeal,                                mode "default"
@@ -216,6 +215,7 @@ mode "$mode_chrome_app" {
     bindsym f exec google-chrome-stable --app=https://translate.google.cn/,                     mode "default"
     bindsym h exec google-chrome-stable       https://news.ycombinator.com/,                    mode "default"
     bindsym i exec google-chrome-stable --app=https://www.instagram.com/,                       mode "default"
+    bindsym l exec google-chrome-stable       https://leetcode.com/tag/array/,                  mode "default"
     bindsym m exec google-chrome-stable --app=https://mail.google.com/mail/u/0/#,               mode "default"
     bindsym r exec google-chrome-stable       https://www.reddit.com/,                          mode "default"
     bindsym s exec google-chrome-stable --app=https://squoosh.app/,                             mode "default"
@@ -326,7 +326,7 @@ exec --no-startup-id redshift-gtk
 exec_always --no-startup-id xmodmap ~/.Xmodmap
 exec_always --no-startup-id exec killall -q noti
 exec_always --no-startup-id dunst -config $HOME/.config/dunst/dunstrc
-exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpapers/adapta_i3.jpg
+exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpapers/Yuumei.jpg
 exec_always --no-startup-id $polybar start
 
 # class                 border  backgr. text    indicator child_border

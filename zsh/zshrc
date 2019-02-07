@@ -9,6 +9,8 @@ if [ -d "$HOME/.gem/ruby/2.5.0/bin" ]; then
     export PATH=$HOME/.gem/ruby/2.5.0/bin:$PATH
 fi
 
+export ALL_PROXY=socks5://127.0.0.1:1080
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -126,14 +128,14 @@ if type musicbox > /dev/null 2>&1; then
     alias music='musicbox'
 fi
 
-if type leetcode > /dev/null 2>&1; then
+# if type leetcode > /dev/null 2>&1; then
     alias lc='leetcode'
     alias plc='proxychains4 leetcode'
     alias lcshow='leetcode show -gxe'
-fi
+# fi
 
 if type thunar > /dev/null 2>&1; then
-    alias open='thunar .'
+    alias open='thunar . &'
 fi
 
 if type i3 > /dev/null 2>&1; then
@@ -170,26 +172,6 @@ alias rm=' noglob timeout 3 rm -Iv --one-file-system'
 if [ -f /usr/share/nvm/init-nvm.sh ]; then
     source /usr/share/nvm/init-nvm.sh
 fi
-
-if type kitty > /dev/null 2>&1; then
-    autoload -Uz compinit
-    compinit
-    # Completion for kitty
-    kitty + complete setup zsh | source /dev/stdin
-fi
-
-#if type wal > /dev/null 2>&1; then
-#    # Import colorscheme from 'wal' asynchronously
-#    # &   # Run the process in the background.
-#    # ( ) # Hide shell job control messages.
-#    (cat ~/.cache/wal/sequences &)
-
-##    # Alternative (blocks terminal for 0-3ms)
-##    cat ~/.cache/wal/sequences
-
-#    # To add support for TTYs this line can be optionally added.
-##    source ~/.cache/wal/colors-tty.sh
-#fi
 
 # size of saved history
 HISTSIZE=100000

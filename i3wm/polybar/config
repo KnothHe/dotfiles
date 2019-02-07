@@ -44,7 +44,7 @@ fixed-center = false
 ;background = #ff272822
 ;background = #ff222c31
 ;background = #ff03224e
-background = #00000000
+background = #aa000000
 foreground = ${colors.foreground}
 
 line-size = 3
@@ -86,7 +86,7 @@ height = 27
 radius = 0.0
 fixed-center = false
 
-background = #00000000
+background = #aa000000
 foreground = #ffffff
 
 line-size = 3

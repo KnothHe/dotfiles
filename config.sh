@@ -19,10 +19,9 @@ function softlink {
     return 0
 }
 
-cfgDirs=(   "$HOME/.config/nvim" \
+cfgDirs=(   \
+            "$HOME/.config/nvim" \
             "$HOME/.local/share/nvim/site/autoload" \
-            "$HOME" \
-            "$HOME/.config/tmux/tmux-powerline/themes" \
             "$HOME" \
             "$HOME/.oh-my-zsh/custom/themes" \
             "$HOME/.config/i3" \
@@ -37,10 +36,9 @@ cfgDirs=(   "$HOME/.config/nvim" \
             "$HOME" \
 )
 
-cfgNames=(  "init.vim" \
+cfgNames=(  \
+            "init.vim" \
             "plug.vim" \
-            ".tmux.conf" \
-            "default.sh" \
             ".zshrc" \
             "nametime.zsh-theme" \
             "config" \
@@ -55,10 +53,9 @@ cfgNames=(  "init.vim" \
             ".dir_colors" \
 )
 
-dotFiles=(  "nvim/init.vim" \
+dotFiles=(  \
+            "nvim/init.vim" \
             "nvim/plug.vim" \
-            "tmux/tmux.conf" \
-            "tmux/default.sh" \
             "zsh/zshrc" \
             "zsh/nametime.zsh-theme" \
             "i3wm/i3/config" \

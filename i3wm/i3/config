@@ -33,7 +33,7 @@ bindsym $mod+Shift+q kill
 bindsym --release $mod+q exec xkill
 
 # start rofi (a program launcher)
-bindsym $mod+d exec --no-startup-id rofi -show run
+bindsym $mod+d exec --no-startup-id rofi -show run -theme Arc-Dark
 # bindsym $mod+Tab exec --no-startup-id rofi -show window
 
 # change focus
@@ -143,7 +143,6 @@ bindsym $mod+Shift+0 move container to workspace $ws10; workspace $ws10
 # set $ws11 "11: Bong"
 set $ws11 "11: Ghost"
 bindsym $mod+w, workspace $ws11
-for_window [workspace = $ws11] floating enable
 bindsym $mod+Ctrl+w move container to workspace $ws10
 bindsym $mod+Shift+w move container to workspace $ws11; workspace $ws11
 
@@ -277,12 +276,32 @@ mode "$mode_system" {
 bindsym $mod+Shift+x mode "$mode_system"
 
 # see https://i3wm.org/docs/userguide.html#list_of_commands
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+
+for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable
+
+for_window [workspace = $ws11] floating enable
+
 for_window [class="Xfce4-appfinder"] floating enable
 for_window [class="flameshot"] floating enable
 for_window [class="Peek"] floating enable
 for_window [class="Manjaro Settings Manager"] floating enable
 for_window [class="matplotlib"] floating enable
 for_window [instance="translate.google.cn"] floating enable
+
+#for_window [class="jetbrains-studio"] floating disable
+#for_window [class="jetbrains-idea-ce"] floating disable
+#for_window [class="jetbrains-pycharm-ce"] floating disable
+
+# move window to special workspace
+assign [class="netease-cloud-music"] $ws3
+assign [instance="twitter.com"] $ws4
+assign [instance="wx.qq.com"] $ws4
+assign [class="jetbrains-studio"] $ws11
 
 # amixer
 bindsym $mod+F3 exec amixer set Master 5%+ unmute
@@ -326,7 +345,7 @@ exec --no-startup-id redshift-gtk
 exec_always --no-startup-id xmodmap ~/.Xmodmap
 exec_always --no-startup-id exec killall -q noti
 exec_always --no-startup-id dunst -config $HOME/.config/dunst/dunstrc
-exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpapers/Yuumei.jpg
+exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpapers/pain_restaurant.png
 exec_always --no-startup-id $polybar start
 
 # class                 border  backgr. text    indicator child_border

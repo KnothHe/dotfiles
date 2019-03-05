@@ -108,7 +108,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 " file directory
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 " completion, for completion, consider ncm2
-Plug 'Shougo/deoplete.nvim'
+" Plug 'Shougo/deoplete.nvim'
 Plug 'jiangmiao/auto-pairs'
 " ncm2
 Plug 'ncm2/ncm2'

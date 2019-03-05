@@ -1,11 +1,14 @@
 #!/bin/sh
 lock() {
-    i3lock -i ~/Pictures/wallpapers/lock.png
+    # -b enable beeping
+    # -t display the image tiled all over the screen
+    # -e ignore empty password
+    i3lock -e -b -t -i ~/Pictures/wallpapers/lock.png
 }
 
 case "$1" in
     lock)
-        xflock4
+        lock
         ;;
     logout)
         i3-msg exit

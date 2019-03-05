@@ -27,5 +27,8 @@
     "vim.enableNeovim": true,
     "vim.neovimPath": "/usr/bin/nvim",
     "vim.foldfix": true,
-    "workbench.startupEditor": "newUntitledFile"
+    "workbench.startupEditor": "newUntitledFile",
+    "window.titleBarStyle": "native",
+    "git.countBadge": "off",
+    "files.autoSave": "afterDelay"
 }

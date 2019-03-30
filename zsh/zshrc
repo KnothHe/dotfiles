@@ -170,6 +170,8 @@ alias rm=' noglob timeout 3 rm -Iv --one-file-system'
 
 alias clc='clc.sh'
 
+alias lcs='lcs.sh'
+
 # nvm for nvim
 if [ -f /usr/share/nvm/init-nvm.sh ]; then
     source /usr/share/nvm/init-nvm.sh

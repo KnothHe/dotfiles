@@ -64,8 +64,7 @@ font-1 = Font Awesome 5 Free Solid:pixelsize=12;3
 font-2 = Font Awesome 5 Brands:pixelsize=12;3
 font-3 = Font Awesome 5 Free:style=Regular:pixelsize=12;3
 font-4 = Font Awesome 5 Free:style=Solid:pixelsize=12;3
-font-5 = Font Awesome 5 Brands:pixelsize=12;3
-font-6 = Source Code Pro:style=Medium:pixelsize=12;3
+font-5 = Source Code Pro Semibold:style=Medium:pixelsize=12;3
 
 modules-left = i3
 modules-center = title
@@ -106,7 +105,7 @@ font-1 = Font Awesome 5 Free Solid:pixelsize=12;3
 font-2 = Font Awesome 5 Brands:pixelsize=12;3
 font-3 = Font Awesome 5 Free:style=Regular:pixelsize=12;3
 font-4 = Font Awesome 5 Free:style=Solid:pixelsize=12;3
-font-5 = Font Awesome 5 Brands:pixelsize=12;3
+font-5 = Source Code Pro Semibold:style=Medium:pixelsize=12;3
 
 modules-left = cpu temperature memory filesystem
 modules-center = kh-text-label

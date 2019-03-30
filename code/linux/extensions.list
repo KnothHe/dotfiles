@@ -9,12 +9,14 @@ eamodio.gitlens
 EditorConfig.EditorConfig
 esbenp.prettier-vscode
 formulahendry.code-runner
+James-Yu.latex-workshop
 justusadam.language-haskell
 mgmcdermott.vscode-language-babel
 mikestead.dotenv
 ms-python.python
 ms-vscode.cpptools
 ms-vscode.Go
+naumovs.color-highlight
 PeterJausovec.vscode-docker
 PKief.material-icon-theme
 redhat.java
@@ -30,4 +32,3 @@ vscjava.vscode-maven
 vscodevim.vim
 wayou.vscode-todo-highlight
 yzhang.markdown-all-in-one
-zhuangtongfa.Material-theme

@@ -147,6 +147,9 @@ Plug 'haya14busa/is.vim'
 " color code and name highlight
 Plug 'chrisbra/Colorizer'
 " misc
+Plug 'lervag/vimtex'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 Plug 'Yggdroot/LeaderF'
 Plug 'echuraev/translate-shell.vim', { 'do': 'wget -O ~/.vim/trans git.io/trans && chmod +x ~/.vim/trans' }
 Plug 'vim-scripts/DrawIt'
@@ -288,6 +291,45 @@ nnoremap <silent> <leader>tt :Trans -t zh-CN<CR>
 vnoremap <silent> <leader>tt :Trans -t zh-CN<CR>
 nnoremap <silent> <leader>td :TransSelectDirection<CR>
 vnoremap <silent> <leader>td :TransSelectDirection<CR>
+" }}}
+
+" {{{ vimtex
+let g:tex_flavor = 'latex'
+let g:Tex_CompileRule_pdf = 'xelatex --interaction=nonstopmode --shell-escape $*'
+let g:vimtex_view_method = 'zathura'
+let g:vimtex_quickfix_mode = 0
+"set conceallevel=1
+"let g:tex_conceal='abdmg'
+let g:tex_conceal = ""
+" neovim need install neovim-remote
+let g:vimtex_compiler_progname = 'nvr'
+
+set completeopt=noinsert,menuone,noselect
+
+augroup my_cm_setup
+  autocmd!
+  autocmd BufEnter * call ncm2#enable_for_buffer()
+  autocmd Filetype tex call ncm2#register_source({
+          \ 'name': 'vimtex',
+          \ 'priority': 8,
+          \ 'scope': ['tex'],
+          \ 'mark': 'tex',
+          \ 'word_pattern': '\w+',
+          \ 'complete_pattern': g:vimtex#re#ncm2,
+          \ 'on_complete': ['ncm2#on_complete#omni', 'vimtex#complete#omnifunc'],
+          \ })
+augroup END
+" }}}
+
+" {{{ ultisnips
+" Trigger configuration. Do not use <tab> if you use
+" https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
 " }}}
 
 " MISC {{{

@@ -12,7 +12,6 @@
     "workbench.tree.horizontalScrolling": true,
     "workbench.iconTheme": "material-icon-theme",
     "update.channel": "none",
-    "workbench.tips.enabled": false,
     "zenMode.centerLayout": false,
     "window.menuBarVisibility": "default",
     "window.zoomLevel": 0,
@@ -30,5 +29,11 @@
     "workbench.startupEditor": "newUntitledFile",
     "window.titleBarStyle": "native",
     "git.countBadge": "off",
-    "files.autoSave": "afterDelay"
+    "files.autoSave": "afterDelay",
+    "workbench.enableExperiments": false,
+    "workbench.editor.enablePreview": false,
+    "editor.wordWrap": "on",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "editor.lineNumbers": "relative"
 }

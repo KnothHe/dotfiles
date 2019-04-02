@@ -1,6 +1,6 @@
-PROMPT='%{$fg[magenta]%}[%c] %{$reset_color%}'
+PROMPT='👻 %{$fg[magenta]%}[%c] %{$reset_color%}'
 
-RPROMPT='${time}'
+RPROMPT='${time} 💀'
 
 # local time, color coded by last return code
 time_enabled="%(?.%{$fg[green]%}.%{$fg[red]%})%*%{$reset_color%}"

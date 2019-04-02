@@ -356,7 +356,7 @@ exec --no-startup-id redshift-gtk
 exec_always --no-startup-id xmodmap ~/.Xmodmap
 exec_always --no-startup-id exec killall -q noti
 exec_always --no-startup-id dunst -config $HOME/.config/dunst/dunstrc
-exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpapers/The-Last-Of-Us-II.jpg
+exec_always --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/night_chinese_city.jpg
 exec_always --no-startup-id $polybar start
 
 # class                 border  backgr. text    indicator child_border

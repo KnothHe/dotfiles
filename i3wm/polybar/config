@@ -26,9 +26,11 @@ background = #222
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 ;foreground = #dfdfdf
-foreground = #fea724
+;foreground = #fea724
+foreground = #f9906f
 foreground-alt = #555
-primary = #ffb52a
+;primary = #ffb52a
+primary = #f9906f
 secondary = #e60053
 alert = #bd2c40
 
@@ -205,7 +207,7 @@ label =  %percentage_used%%
 type = internal/date
 interval = 5
 
-date = "  %a, %e %b "
+date = "  %a %e %b "
 date-alt = "  %Y-%m-%d %a "
 
 time =  %H:%M
@@ -277,7 +279,7 @@ format-padding = 4
 ; Default: %title%
 label = %title%
 label-font = 7
-label-maxlen = 60
+label-maxlen = 30
 
 ; Used instead of label when there is no window title
 ; Available tokens:

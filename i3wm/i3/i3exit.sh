@@ -1,9 +1,12 @@
 #!/bin/sh
 lock() {
-    # -b enable beeping
-    # -t display the image tiled all over the screen
-    # -e ignore empty password
-    i3lock -e -b -t -i ~/Pictures/Wallpapers/lock.png
+#    -b enable beeping
+#    -t display the image tiled all over the screen
+#    -e ignore empty password
+#    i3lock -e -b -t -i ~/Pictures/Wallpapers/my-brain.png
+
+#   depend on lightdm
+    dm-tool switch-to-greeter
 }
 
 case "$1" in

@@ -1,5 +1,4 @@
 {
-    "workbench.colorTheme": "Dracula",
     "editor.fontSize": 16,
     "editor.fontFamily": "'Source Code Pro Semibold', 'monospace', monospace, 'Droid Sans Fallback'",
     "terminal.integrated.fontSize": 16,
@@ -9,9 +8,7 @@
     "vim.autoSwitchInputMethod.switchIMCmd": "/usr/bin/fcitx-remote -t {im}",
     "vim.changeWordIncludesWhitespace": true,
     "workbench.statusBar.feedback.visible": false,
-    "workbench.tree.horizontalScrolling": true,
     "workbench.iconTheme": "material-icon-theme",
-    "update.channel": "none",
     "zenMode.centerLayout": false,
     "window.menuBarVisibility": "default",
     "window.zoomLevel": 0,
@@ -35,5 +32,23 @@
     "editor.wordWrap": "on",
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "editor.lineNumbers": "relative"
+    "editor.lineNumbers": "relative",
+    "vim.sneak": true,
+    "vim.statusBarColorControl": true,
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#005f5f",
+        "statusBar.noFolderBackground": "#005f5f",
+        "statusBar.debuggingBackground": "#005f5f"
+    },
+    "vim.useSystemClipboard": true,
+    "vim.camelCaseMotion.enable": true,
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-e>": false,
+        "<C-b>": false,
+        "<C-f>": false
+    },
+    "latex-workshop.view.pdf.viewer": "tab",
+    "workbench.colorTheme": "Dracula",
+    "update.mode": "manual",
 }

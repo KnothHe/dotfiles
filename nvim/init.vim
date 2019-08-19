@@ -20,11 +20,14 @@
 " Leader Shortcuts {{{
 " map the leader key to <Space>
 let mapleader=" "
-" let maplocalleader="\\"
+let maplocalleader="\\"
 " save file
 nnoremap <leader>w :w!<CR>
 " quit vim/nvim
 nnoremap <leader>q :wq!<CR>
+" copy/paste to system clipboard
+vnoremap <leader>y "*y<CR>
+vnoremap <leader>p "*p<CR>
 "}}}
 
 " UI Config {{{
@@ -51,9 +54,9 @@ set softtabstop=4
 "" tabs are spaces
 set expandtab
 set shiftwidth=4
-"" TAB will looks like >---
-set list
+"" show invisible character
 set listchars=tab:>-
+set list
 " }}}
 
 " Movement {{{
@@ -80,7 +83,14 @@ noremap <Right> <NOP>
 set encoding=utf-8 fileencoding=uft-8
 " insert current date
 nnoremap <Leader>id "=strftime("%Y-%m-%d")<CR>P
-" }}}
+" set relative line number
+set nu
+augroup relative_number
+    autocmd!
+    autocmd InsertEnter * :set norelativenumber
+    autocmd InsertLeave * :set relativenumber
+augroup END
+"}}}
 
 " Learn Vim the Hard Way {{{
 " move current line down
@@ -93,7 +103,7 @@ nnoremap <c-u> viwU
 " edit myvimrc and source myvimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
-vnoremap " <esc>`<i"<esc>`>a"<esc>
+"vnoremap " <esc>`<i"<esc>`>a"<esc>
 iabbrev @@ guanglaihe@gmail.com
 iabbrev personalpage knothhe.github.io
 iabbrev khblog knothhe.github.io/blog
@@ -105,6 +115,8 @@ iabbrev ccpoy Copyright 2018 Guanglai He, all rights reserved.
 " - For vim: ~/.vim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.local/share/nvim/plugged')
+" sourcetrail
+Plug 'CoatiSoftware/vim-sourcetrail'
 " file directory
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 " completion, for completion, consider ncm2
@@ -122,6 +134,9 @@ Plug 'ncm2/ncm2-path'
 Plug 'ncm2/ncm2-pyclang', { 'for' : ['c', 'c++']}
 " python completion
 Plug 'ncm2/ncm2-jedi', { 'for' : 'python' }
+" java completio))n
+" Plug 'ObserverOfTime/ncm2-jc2', {'for': ['java', 'jsp']}
+" Plug 'artur-shaik/vim-javacomplete2', {'for': ['java', 'jsp']}
 " move
 Plug 'easymotion/vim-easymotion'
 " comment
@@ -227,6 +242,7 @@ let g:rainbow_conf = {
 let g:vim_markdown_conceal = 0
 " enable TOC window auto-fit
 let g:vim_markdown_toc_autofit = 1
+let g:vim_markdown_folding_disabled = 1
 " }}}
 
 " colorscheme {{{
@@ -295,8 +311,9 @@ vnoremap <silent> <leader>td :TransSelectDirection<CR>
 
 " {{{ vimtex
 let g:tex_flavor = 'latex'
-let g:Tex_CompileRule_pdf = 'xelatex --interaction=nonstopmode --shell-escape $*'
+"let g:Tex_CompileRule_pdf = 'latexmk -xelatex -pdf $*'
 let g:vimtex_view_method = 'zathura'
+"let g:latex_view_general_viewer='okular'
 let g:vimtex_quickfix_mode = 0
 "set conceallevel=1
 "let g:tex_conceal='abdmg'
@@ -307,17 +324,17 @@ let g:vimtex_compiler_progname = 'nvr'
 set completeopt=noinsert,menuone,noselect
 
 augroup my_cm_setup
-  autocmd!
-  autocmd BufEnter * call ncm2#enable_for_buffer()
-  autocmd Filetype tex call ncm2#register_source({
-          \ 'name': 'vimtex',
-          \ 'priority': 8,
-          \ 'scope': ['tex'],
-          \ 'mark': 'tex',
-          \ 'word_pattern': '\w+',
-          \ 'complete_pattern': g:vimtex#re#ncm2,
-          \ 'on_complete': ['ncm2#on_complete#omni', 'vimtex#complete#omnifunc'],
-          \ })
+    autocmd!
+    autocmd BufEnter * call ncm2#enable_for_buffer()
+    autocmd Filetype tex call ncm2#register_source({
+                \ 'name': 'vimtex',
+                \ 'priority': 8,
+                \ 'scope': ['tex'],
+                \ 'mark': 'tex',
+                \ 'word_pattern': '\w+',
+                \ 'complete_pattern': g:vimtex#re#ncm2,
+                \ 'on_complete': ['ncm2#on_complete#omni', 'vimtex#complete#omnifunc'],
+                \ })
 augroup END
 " }}}
 

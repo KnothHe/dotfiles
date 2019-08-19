@@ -12,6 +12,7 @@
 set $mod Mod4
 set $term xfce4-terminal --command
 set $polybar $HOME/bin/polybar-launch.sh
+set $browser google-chrome-stable
 
 # Font for window titles.
 font pango:Source Code Pro Semibold 12
@@ -150,11 +151,73 @@ bindsym $mod+Shift+9 move container to workspace $ws9;  workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10; workspace $ws10
 
 # floating workspace
-# set $ws11 "11: Bong"
 set $ws11 "11:"
-bindsym $mod+w, workspace $ws11
-bindsym $mod+Ctrl+w move container to workspace $ws10
-bindsym $mod+Shift+w move container to workspace $ws11; workspace $ws11
+set $ws12 "12:"
+set $ws13 "13:"
+set $ws14 "14:"
+set $ws15 "15:"
+set $ws16 "16:"
+set $ws17 "17:"
+set $ws18 "18:"
+set $ws19 "19:"
+set $ws20 "20:"
+
+# Move focused container to flating workspace
+set $mode_float_workspaces Float WorkSpace
+mode "$mode_float_workspaces" {
+    bindsym 1, workspace $ws11, mode "default"
+    bindsym 2, workspace $ws12, mode "default"
+    bindsym 3, workspace $ws13, mode "default"
+    bindsym 4, workspace $ws14, mode "default"
+    bindsym 5, workspace $ws15, mode "default"
+    bindsym 6, workspace $ws16, mode "default"
+    bindsym 7, workspace $ws17, mode "default"
+    bindsym 8, workspace $ws18, mode "default"
+    bindsym 9, workspace $ws19, mode "default"
+    bindsym 0, workspace $ws20, mode "default"
+
+    # back to normal: Enter or Escape or $mod+w
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+w mode "default"
+}
+bindsym $mod+w mode "$mode_float_workspaces"
+
+# move container to floating workspace and move to that workspace
+set $mode_move_float_stay Move Float Stay
+mode "$mode_move_float_stay" {
+    bindsym 1, move container to workspace $ws11, mode "default"
+    bindsym 2, move container to workspace $ws12, mode "default"
+    bindsym 3, move container to workspace $ws13, mode "default"
+    bindsym 4, move container to workspace $ws14, mode "default"
+    bindsym 5, move container to workspace $ws15, mode "default"
+    bindsym 6, move container to workspace $ws16, mode "default"
+    bindsym 7, move container to workspace $ws17, mode "default"
+    bindsym 8, move container to workspace $ws18, mode "default"
+    bindsym 9, move container to workspace $ws19, mode "default"
+    bindsym 0, move container to workspace $ws20, mode "default"
+
+    # back to normal: Enter or Escape or $mod+Ctrl+w
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+Shift+e mode "default"
+}
+bindsym $mod+Shift+e mode "$mode_move_float_stay"
+
+# Move to flating workspace with focused container
+set $mode_move_float Move Float
+mode "$mode_move_float" {
+    bindsym 1, move container to workspace $ws11, workspace $ws11, mode "default"
+    bindsym 2, move container to workspace $ws12, workspace $ws12, mode "default"
+    bindsym 3, move container to workspace $ws13, workspace $ws13, mode "default"
+    bindsym 4, move container to workspace $ws14, workspace $ws14, mode "default"
+
+    # back to normal: Enter or Escape or $mod+Shift+w
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+Shift+w mode "default"
+}
+bindsym $mod+Shift+w mode "$mode_move_float"
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -166,41 +229,43 @@ bindsym $mod+Shift+r restart
 # resize window (you can also use the mouse for that)
 set $mode_resize Resize
 mode "$mode_resize" {
-        # These bindings trigger as soon as you enter the resize mode
+    # These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+    # Pressing left will shrink the window’s width.
+    # Pressing right will grow the window’s width.
+    # Pressing up will shrink the window’s height.
+    # Pressing down will grow the window’s height.
+    bindsym h resize shrink width 10 px or 10 ppt
+    bindsym j resize grow height 10 px or 10 ppt
+    bindsym k resize shrink height 10 px or 10 ppt
+    bindsym l resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+    # same bindings, but for the arrow keys
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape or $mod+r
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
+    # back to normal: Enter or Escape or $mod+r
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
 }
 bindsym $mod+r mode "$mode_resize"
 
 set $mode_launcher Launcher
 mode "$mode_launcher" {
-    bindsym a exec android-studio,                     mode "default"
-    bindsym b exec calibre,                             mode "default"
+    bindsym a exec android-studio,                      mode "default"
+    bindsym b exec $browser,                            mode "default"
     bindsym c exec google-chrome-stable,                mode "default"
     bindsym d exec dropbox,                             mode "default"
     bindsym e exec env "LC_CTYPE=zh_CN.UTF-8" emacs,    mode "default"
     bindsym f exec firefox,                             mode "default"
     bindsym g exec gimp,                                mode "default"
     bindsym h exec thunar,                              mode "default"
-    bindsym i exec idea,                                mode "default"
+    bindsym i exec intellij-idea-ultimate-edition,      mode "default"
+    bindsym l exec ~/bin/sts4,                          mode "default"
+    bindsym j exec clion,                               mode "default"
     bindsym m exec $term musicbox,                      mode "default"
     bindsym n exec netease-cloud-music,                 mode "default"
     bindsym o exec xfce4-appfinder,                     mode "default"
@@ -225,13 +290,14 @@ mode "$mode_chrome_app" {
     bindsym f exec google-chrome-stable --app=https://translate.google.cn/,                     mode "default"
     bindsym h exec google-chrome-stable       https://news.ycombinator.com/,                    mode "default"
     bindsym i exec google-chrome-stable --app=https://www.instagram.com/,                       mode "default"
-    bindsym l exec google-chrome-stable       https://leetcode.com/tag/array/,                  mode "default"
+    bindsym k exec google-chrome-stable --app=https://knothhe.slack.com/,                       mode "default"
+    bindsym l exec google-chrome-stable       https://leetcode.com/tag/string/,                 mode "default"
     bindsym m exec google-chrome-stable --app=https://mail.google.com/mail/u/0/#,               mode "default"
     bindsym r exec google-chrome-stable       https://www.reddit.com/,                          mode "default"
     bindsym s exec google-chrome-stable --app=https://squoosh.app/,                             mode "default"
     bindsym t exec google-chrome-stable --app=https://twitter.com/,                             mode "default"
     bindsym y exec google-chrome-stable       https://www.youtube.com/,                         mode "default"
-    bindsym w exec google-chrome-stable --app=https://wx.qq.com/,                               mode "default"
+    bindsym w exec google-chrome-stable --new-window https://wx.qq.com/,                               mode "default"
 
     bindsym Escape mode "default"
     bindsym Return mode "default"
@@ -248,7 +314,7 @@ set $mode_screen (c) pick color, (p) screen, (w) current window, (g) open with g
 mode "$mode_screen" {
     bindsym c --release exec xcolor | xclip \
             && notify-send "$(xclip -o)" "has been copyed to clipboard", mode "default"
-    bindsym d exec i3-scrot -w 5 \
+    bindsym d exec i3-scrot -w 3 \
             && scrot -u 'screenshot.png' -e 'mv $f ~/Pictures/screenshots/' \
             && xclip -selection clipboard -t 'image/png' ~/Pictures/screenshots/screenshot.png, \
             mode "default"
@@ -296,6 +362,15 @@ for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable
 
 for_window [workspace = $ws11] floating enable
+for_window [workspace = $ws12] floating enable
+for_window [workspace = $ws13] floating enable
+for_window [workspace = $ws14] floating enable
+for_window [workspace = $ws15] floating enable
+for_window [workspace = $ws16] floating enable
+for_window [workspace = $ws17] floating enable
+for_window [workspace = $ws18] floating enable
+for_window [workspace = $ws19] floating enable
+for_window [workspace = $ws20] floating enable
 
 for_window [class="Xfce4-appfinder"] floating enable
 for_window [class="flameshot"] floating enable
@@ -312,7 +387,7 @@ for_window [instance="translate.google.cn"] floating enable
 assign [class="netease-cloud-music"] $ws3
 assign [instance="twitter.com"] $ws4
 assign [instance="wx.qq.com"] $ws4
-assign [class="jetbrains-studio"] $ws11
+# assign [class="jetbrains-studio"] $ws11
 
 # amixer
 bindsym $mod+F3 exec amixer set Master 5%+ unmute
@@ -353,10 +428,11 @@ bindsym $mod+equal scratchpad show
 exec --no-startup-id compton -b
 exec --no-startup-id nm-applet
 exec --no-startup-id redshift-gtk
+exec --no-startup-id xfce4-power-manager
 exec_always --no-startup-id xmodmap ~/.Xmodmap
 exec_always --no-startup-id exec killall -q noti
 exec_always --no-startup-id dunst -config $HOME/.config/dunst/dunstrc
-exec_always --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/night_chinese_city.jpg
+exec_always --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/sun-rays.jpg
 exec_always --no-startup-id $polybar start
 
 # class                 border  backgr. text    indicator child_border

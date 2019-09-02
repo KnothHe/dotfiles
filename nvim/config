@@ -1,0 +1,8 @@
+#!/bin/bash
+
+softlink="../softlink-config"
+# init.vim
+$softlink "$HOME/.config/nvim" "init.vim" "init.vim"
+# plug.vim
+$softlink "$HOME/.local/share/nvim/site/autoload" "plug.vim" "plug.vim"
+

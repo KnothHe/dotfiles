@@ -24,7 +24,7 @@ common=(    'shadowsocks' \
             'fzf' \
             'neovim' \
             'qtcreator' \
-            'visual-studio-code-bin' \
+            'code' \
             'dropbox' \
             'emacs' \
             'intellij-idea-community-edition' \

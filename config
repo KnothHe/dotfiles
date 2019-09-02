@@ -1,0 +1,24 @@
+#!/bin/bash
+
+root_dir="$(pwd)"
+function conf {
+    cd $cfg_dir
+    ./config
+    cd $root_dir
+}
+
+# code
+cfg_dir="$(pwd)/code/linux"; conf;
+# i3wm
+cfg_dir="$(pwd)/i3wm"; conf;
+# zsh
+cfg_dir="$(pwd)/zsh"; conf;
+# nvim
+cfg_dir="$(pwd)/nvim"; conf;
+# tmux
+cfg_dir="$(pwd)/tmux"; conf;
+# scripts
+cfg_dir="$(pwd)/scripts"; conf;
+# misc
+cfg_dir="$(pwd)/misc"; conf;
+

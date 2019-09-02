@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# only when arguments greater than 2 will execute following commands
+if [ $# -gt 0 ]; then
+    fullfile="$1"
+    # get filename and extension
+    filename=$(basename -- "$fullfile")
+    extension="${filename##*.}"
+    filename="${filename%.*}"
+    # set result name
+    result_name="$filename.png"
+    # if arguments set result name
+    if [ $# -eq 2 ]; then
+        result_name="$2";
+    fi
+    # convert other image format to png
+    if [ -f $fullfile -a $extension != "png" ]; then
+        convert "$fullfile" "$result_name";
+    fi
+fi

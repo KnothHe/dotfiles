@@ -26,11 +26,12 @@ background = #222
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 ;foreground = #dfdfdf
-;foreground = #fea724
-foreground = #f9906f
+foreground = #fea724
+;foreground = #ed5736
 foreground-alt = #555
-;primary = #ffb52a
-primary = #f9906f
+primary = #ffb52a
+;primary = #f9906f
+;primary = #ed5736
 secondary = #e60053
 alert = #bd2c40
 

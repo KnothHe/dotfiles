@@ -1,0 +1,5 @@
+#!/bin/bash
+
+softlink="../softlink-config"
+$softlink "$HOME" ".tmux.conf" "tmux.conf"
+

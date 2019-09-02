@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# if only one command argument
+if [ $# -eq 1 ]; then
+    fullfile=$1
+    # get filename and its extension
+    filename=$(basename -- "$fullfile")
+    extension="${filename##*.}"
+    filename="${filename%.*}"
+    # result path
+    prefix_path="/tmp/copypng"
+    if [ ! -d "$prefix_path" ]; then
+        mkdir -p "$prefix_path";
+    fi
+    result_path="$prefix_path/copypng.png"
+    # convert other file formats to png or just copy file
+    if [ -f "$fullfile" -a $extension != "png" ]; then
+        img2png "$fullfile" "$result_path";
+    else
+        cp "$fullfile" "$result_path";
+    fi
+    # copy converted file or origin file png file to clipboard
+    xclip -selection clipboard -target image/png "$result_path";
+    # delete converted file
+    if [ -e "$result_path" ]; then
+        rm "$result_path";
+    fi
+fi

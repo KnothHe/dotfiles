@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# if config directory is not exist, creat this directory.
+# if config file has already exist, rename it as origName.orgi.
+# finally create softlink of config file.
+function softlink {
+    local cfgFile="$cfgDir/$cfgName"
+    if [ -e "$cfgFile" -a ! -L "$cfgFile" ]; then
+        mv "$cfgFile" "$cfgFile.orgi"
+    fi
+    if [ ! -d "$cfgDir" ]; then
+        mkdir -p "$cfgDir"
+    elif [ -L "$cfgFile" ]; then
+        rm "$cfgFile"
+    fi
+
+    ln -s "$dotFile" "$cfgFile"
+
+    return 0
+}
+if [ $# -eq 3 ]; then
+    cfgDir="$1"
+    cfgName="$2"
+    dotFile="$(pwd)/$3"
+    softlink
+    echo -en "\E[41m\E[37m$cfgDir/$cfgName\E(B\E[m"
+    echo -en "\E[32m and \E(B\E[m"
+    echo -en "\E[43m\E[30m$dotFile\E(B\E[m"
+    echo ""
+fi
+

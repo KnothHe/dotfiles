@@ -1,0 +1,16 @@
+#! /bin/bash
+
+# vs code config file
+softlink="../../softlink-config"
+$softlink "$HOME/.config/Code - OSS/User" "settings.json" "settings.json"
+
+## install extensions
+#installed="$(code --list-extensions | wc -l)"
+#need_installed="$(cat extensions.list | wc -l)"
+#if [ $need_installed -gt $installed ]; then
+#    cat extensions.list | xargs -L 1 echo code --install-extension > install.sh
+#    chmod +x install.sh
+#    ./install.sh
+#    rm install.sh
+#fi
+

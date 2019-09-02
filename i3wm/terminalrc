@@ -26,7 +26,7 @@ MiscRewrapOnResize=TRUE
 MiscUseShiftArrowsToScroll=FALSE
 MiscSlimTabs=TRUE
 MiscNewTabAdjacent=FALSE
-BackgroundImageFile=/home/knothhe/Pictures/wallpapers/wallpaper06.jpg
+BackgroundImageFile=/home/knothhe/Pictures/Wallpapers/girl_and_dog.jpg
 BackgroundImageStyle=TERMINAL_BACKGROUND_STYLE_CENTERED
 ColorForeground=#D8DEE9
 ColorBackground=#2E3440
@@ -40,4 +40,6 @@ ScrollingOnOutput=FALSE
 BackgroundImageShading=0.800000
 BackgroundMode=TERMINAL_BACKGROUND_IMAGE
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
+MiscSearchDialogOpacity=100
+MiscShowUnsafePasteDialog=TRUE
 

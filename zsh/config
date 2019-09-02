@@ -1,0 +1,6 @@
+#!/bin/bash
+
+softlink="../softlink-config"
+$softlink "$HOME" ".zshrc" "zshrc"
+$softlink "$HOME/.oh-my-zsh/custom/themes" "nametime.zsh-theme" "nametime.zsh-theme"
+

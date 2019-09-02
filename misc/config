@@ -1,0 +1,17 @@
+#!/bin/bash
+
+softlink="../softlink-config"
+# shell colors
+$softlink "$HOME" ".dir_colors" "dir_colors"
+# touchpad
+$softlink "/etc/X11/xorg.conf.d" "30-touchpad.conf" "30-touchpad.conf"
+## terminal draculat theme
+#$softlink "/etc/X11/xorg.conf.d" "30-touchpad.conf" "30-touchpad.conf"
+# privoxy
+$softlink "/etc/privoxy" "privoxy" "privoxy"
+# proxychains-ng
+$softlink "/etc" "proxychains.conf" "proxychains.conf"
+# zathurarc
+$softlink "$HOME/.config/zathura" "zathurarc" "zathurarc"
+# v2ray !!! just a template, you need to fill in the content yourself
+

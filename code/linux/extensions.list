@@ -26,6 +26,7 @@ ms-vscode-remote.remote-ssh-explorer
 ms-vscode.cpptools
 ms-vscode.Go
 naumovs.color-highlight
+octref.vetur
 Pivotal.vscode-boot-dev-pack
 Pivotal.vscode-concourse
 Pivotal.vscode-manifest-yaml

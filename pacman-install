@@ -1,0 +1,112 @@
+#!/bin/bash
+
+##########################################
+#  _           _        _ _       _      #
+# (_)_ __  ___| |_ __ _| | |  ___| |__   #
+# | | '_ \/ __| __/ _` | | | / __| '_ \  #
+# | | | | \__ \ || (_| | | |_\__ \ | | | #
+# |_|_| |_|___/\__\__,_|_|_(_)___/_| |_| #
+#                                        #
+#               guanglaihe@gmail.com     #
+#               use pacman in Manjaro    #
+#               Create: 2018-11-29       #
+#               Update: 2018-11-29       #
+##########################################
+
+common=( \
+    'shadowsocks' \
+    'yay' \
+    'arc-gtk-theme' \
+    'google-chrome' \
+    'fzf' \
+    'neovim' \
+    'qtcreator' \
+    'code' \
+    'dropbox' \
+    'emacs' \
+    'tldr' \
+    'ristretto' \
+    'flameshot' \
+    'figlet' \
+    'st' \
+    )
+
+jetbrains=( \
+    'intellij-idea-ultimate-edition' \
+    'pycharm-professional' \
+    'clion' \
+    )
+
+fonts=( \
+    'noto-fonts' \
+    'noto-fonts-cjk' \
+    'noto-fonts-emoji' \
+    'adobe-source-code-pro-fonts'\
+    )
+
+i3=( \
+    'dunst' \
+    'polybar' \
+    'ttf-font-awesome' \
+    'rofi' \
+    'feh' \
+    'xorg-xbacklight' \
+    'i3-gaps' \
+    'i3-wm' \
+    'i3blocks' \
+    'i3lock' \
+    'xdo' \
+    'i3-scrot'
+    )
+
+# 'texlive-most' 'texlive-lang' \
+
+pacin='sudo pacman -S'
+ins=$pacin
+function pacman_install {
+    if pacman -Qi $package > /dev/null 2>&1; then
+        echo -en "\E[32m$package\E(B\E[m has been installed" # green foreground
+        echo ""
+    else
+        yes | $ins $package
+        echo -en "\E[32m$package\E(B\E[m installation is completed" # green foreground
+        echo ""
+    fi
+}
+
+function install_query {
+    # arguments:
+    #   ans
+    #   arr
+    case $ans in
+        #Install
+        Y)
+        for package in ${arr[@]};
+        do
+            pacman_install
+        done
+        ;;
+    *)
+        echo "Do nothing"
+        ;;
+esac
+}
+
+read -p "Install common packages [Y/n] ? " ans
+arr=${common[*]}
+install_query
+
+read -p "Install i3 packages [Y/n] ? " ans
+arr=${i3[*]}
+install_query
+
+read -p "Install jetbrains packages [Y/n] ? " ans
+arr=${jetbrains[*]}
+install_query
+
+read -p "Install font packages [Y/n] ? " ans
+arr=${fonts[*]}
+install_query
+
+echo -en "\E[41m\E[37mDONE\E(B\E[m" # red background color
+echo ""

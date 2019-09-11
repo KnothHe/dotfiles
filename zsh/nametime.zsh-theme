@@ -1,18 +1,28 @@
-PROMPT='%{$fg[magenta]%}[%c] %{$reset_color%}'
+# left prompt
+PROMPT='${directory} '
 
-RPROMPT='${time}'
-
-# RPROMPT='$(_vi_status)%{$(echotc UP 1)%}$(_git_time_since_commit) $(git_prompt_status) ${_return_status}%{$(echotc DO 1)%}'
+# current directory
+directory="%{$fg[magenta]%}[%c]%{$reset_color%}"
 
 # local time, color coded by last return code
-time_enabled="%(?.%{$fg[green]%}.%{$fg[red]%})%*%{$reset_color%}"
-time_disabled="%{$fg[green]%}%*%{$reset_color%}"
+time_enabled="%(?.%{$fg[green]%}.%{$fg[red]%})[%*]%{$reset_color%}"
+time_disabled="%{$fg[green]%}[%*]%{$reset_color%}"
 time=$time_enabled
 
-## just copy frome avit.zsh-theme
-#function _vi_status() {
-#  if {echo $fpath | grep -q "plugins/vi-mode"}; then
-#    echo "$(vi_mode_prompt_info)"
-#  fi
-#}
+RPROMPT='$(mnml_git) ${time}'
 
+# mnml_git, copyed from minimal.zsh.theme
+MNML_OK_COLOR="${MNML_OK_COLOR:-2}"
+MNML_ERR_COLOR="${MNML_ERR_COLOR:-1}"
+
+function mnml_git {
+    local statc="%{\e[0;3${MNML_OK_COLOR}m%}" # assume clean
+    local bname="$(git rev-parse --abbrev-ref HEAD 2> /dev/null)"
+
+    if [ -n "$bname" ]; then
+        if [ -n "$(git status --porcelain 2> /dev/null)" ]; then
+            statc="%{\e[0;3${MNML_ERR_COLOR}m%}"
+        fi
+        printf '%b' "$statc$bname%{\e[0m%}"
+    fi
+}

@@ -1,44 +1,5 @@
 #!/bin/bash
 
-cfgDirs=(   \
-            "$HOME/.config/i3" \
-            "$HOME/bin" \
-            "$HOME/.config/polybar" \
-            "$HOME/bin" \
-            "$HOME" \
-            "$HOME/.config" \
-            "$HOME/.config/dunst" \
-            "$HOME" \
-            "$HOME/.config" \
-            "$HOME" \
-)
-
-cfgNames=(  \
-            "config" \
-            "i3exit" \
-            "config" \
-            "polybar-launch.sh" \
-            ".Xmodmap" \
-            "compton.conf" \
-            "dunstrc" \
-            ".profile" \
-            "i3-scrot.conf" \
-            ".dir_colors" \
-)
-
-dotFiles=(  \
-            "i3wm/i3/config" \
-            "i3wm/i3/i3exit.sh" \
-            "i3wm/polybar/config" \
-            "i3wm/polybar/polybar.sh" \
-            "i3wm/Xmodmap" \
-            "i3wm/compton.conf" \
-            "i3wm/dunstrc" \
-            "i3wm/profile" \
-            "i3wm/i3-scrot.conf" \
-            "dir_colors" \
-)
-
 softlink="../softlink-config"
 # i3 config file
 $softlink "$HOME/.config/i3" "config" "i3/i3config"

@@ -1,8 +1,8 @@
 #!/bin/bash
 
 softlink="../softlink-config"
-$softlink "$HOME/bin/" "img2png" "img2png"
-$softlink "$HOME/bin/" "copyimg" "copyimg"
-$softlink "$HOME/bin/" "ojn" "ojn"
+$softlink "$HOME/bin" "img2png" "img2png"
+$softlink "$HOME/bin" "copyimg" "copyimg"
+$softlink "$HOME/bin" "ojn" "ojn"
 
 

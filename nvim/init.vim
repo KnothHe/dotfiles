@@ -26,6 +26,8 @@ nnoremap <leader>w :w!<CR>
 " quit vim/nvim
 nnoremap <leader>q :wq!<CR>
 " copy/paste to system clipboard
+nnoremap <leader>y "*y<CR>
+nnoremap <leader>p "*p<CR>
 vnoremap <leader>y "*y<CR>
 vnoremap <leader>p "*p<CR>
 "}}}

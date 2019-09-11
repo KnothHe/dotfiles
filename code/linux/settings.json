@@ -7,7 +7,6 @@
     "vim.autoSwitchInputMethod.obtainIMCmd": "/usr/bin/fcitx-remote",
     "vim.autoSwitchInputMethod.switchIMCmd": "/usr/bin/fcitx-remote -t {im}",
     "vim.changeWordIncludesWhitespace": true,
-    "workbench.statusBar.feedback.visible": false,
     "workbench.iconTheme": "material-icon-theme",
     "zenMode.centerLayout": false,
     "window.menuBarVisibility": "default",
@@ -36,11 +35,18 @@
     "vim.sneak": true,
     "vim.statusBarColorControl": true,
     "workbench.colorCustomizations": {
-        "statusBar.background": "#5f0000",
-        "statusBar.noFolderBackground": "#5f0000",
-        "statusBar.debuggingBackground": "#5f0000"
+        "activityBar.inactiveForeground": "#e7e7e799",
+        "activityBarBadge.background": "#ff9fff",
+        "activityBarBadge.foreground": "#15202b",
+        "titleBar.activeBackground": "#005f5f",
+        "titleBar.inactiveBackground": "#005f5f99",
+        "titleBar.activeForeground": "#e7e7e7",
+        "titleBar.inactiveForeground": "#e7e7e799",
+        "statusBarItem.hoverBackground": "#009292",
+        "statusBar.background": "#005f5f",
+        "statusBar.noFolderBackground": "#005f5f",
+        "statusBar.debuggingBackground": "#005f5f"
     },
-    "vim.useSystemClipboard": true,
     "vim.camelCaseMotion.enable": true,
     "vim.handleKeys": {
         "<C-a>": false,
@@ -51,6 +57,8 @@
     "latex-workshop.view.pdf.viewer": "tab",
     "workbench.colorTheme": "Dracula",
     "update.mode": "manual",
+    "terminal.external.linuxExec": "st",
+    "debug.enableAllHovers": true,
+    "files.trimTrailingWhitespace": true,
+    "java.jdt.ls.vmargs": "-noverify -Xmx1G -XX:+UseG1GC -XX:+UseStringDeduplication -javaagent:\"/home/knothhe/.vscode-oss/extensions/gabrielbb.vscode-lombok-0.9.8/server/lombok.jar\"",
 }
-
-

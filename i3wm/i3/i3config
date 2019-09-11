@@ -213,6 +213,12 @@ mode "$mode_move_float" {
     bindsym 2, move container to workspace $ws12, workspace $ws12, mode "default"
     bindsym 3, move container to workspace $ws13, workspace $ws13, mode "default"
     bindsym 4, move container to workspace $ws14, workspace $ws14, mode "default"
+    bindsym 5, move container to workspace $ws15, workspace $ws15, mode "default"
+    bindsym 6, move container to workspace $ws16, workspace $ws16, mode "default"
+    bindsym 7, move container to workspace $ws17, workspace $ws17, mode "default"
+    bindsym 8, move container to workspace $ws18, workspace $ws18, mode "default"
+    bindsym 9, move container to workspace $ws19, workspace $ws19, mode "default"
+    bindsym 0, move container to workspace $ws20, workspace $ws20, mode "default"
 
     # back to normal: Enter or Escape or $mod+Shift+w
     bindsym Return mode "default"
@@ -257,10 +263,8 @@ bindsym $mod+r mode "$mode_resize"
 
 set $mode_launcher Launcher
 mode "$mode_launcher" {
-    bindsym a exec android-studio,                      mode "default"
     bindsym b exec $browser,                            mode "default"
     bindsym c exec google-chrome-stable,                mode "default"
-    bindsym d exec dropbox,                             mode "default"
     bindsym e exec env "LC_CTYPE=zh_CN.UTF-8" emacs,    mode "default"
     bindsym f exec firefox,                             mode "default"
     bindsym g exec gimp,                                mode "default"
@@ -268,13 +272,11 @@ mode "$mode_launcher" {
     bindsym i exec intellij-idea-ultimate-edition,      mode "default"
     bindsym l exec ~/bin/sts4,                          mode "default"
     bindsym j exec clion,                               mode "default"
-    bindsym m exec $term musicbox,                      mode "default"
     bindsym n exec netease-cloud-music,                 mode "default"
-    bindsym o exec xfce4-appfinder,                     mode "default"
     bindsym p exec pycharm,                             mode "default"
     bindsym q exec qtcreator,                           mode "default"
-    bindsym s exec shotwell,                            mode "default"
-    bindsym t exec $term htop,                          mode "default"
+    bindsym t exec thunderbird,                         mode "default"
+    bindsym s exec st,                                  mode "default"
     bindsym v exec code,                                mode "default"
     bindsym z exec zeal,                                mode "default"
 
@@ -380,6 +382,7 @@ for_window [class="Peek"] floating enable
 for_window [class="Manjaro Settings Manager"] floating enable
 for_window [class="matplotlib"] floating enable
 for_window [class="Sxiv"] floating enable
+for_window [class="st-256color"] floating enable
 for_window [instance="translate.google.cn"] floating enable
 
 #for_window [class="jetbrains-studio"] floating disable

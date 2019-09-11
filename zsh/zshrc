@@ -9,7 +9,9 @@ if [ -d "$HOME/.gem/ruby/2.5.0/bin" ]; then
     export PATH=$HOME/.gem/ruby/2.5.0/bin:$PATH
 fi
 
-export PATH=$HOME/bin/geckodriver:$PATH
+if [ -d "$HOME/bin/geckodriver" ]; then
+    export PATH=$HOME/bin/geckodriver:$PATH
+fi
 
 # export ALL_PROXY=socks5://127.0.0.1:1080
 

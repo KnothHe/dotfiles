@@ -144,11 +144,17 @@ if type polybar > /dev/null 2>&1; then
 fi
 
 if type exa > /dev/null 2>&1; then
-    alias exa='exa -l'
+    alias e='exa'
 fi
 
 if type xsel > /dev/null 2>&1; then
     alias clip='xsel -b'
+fi
+
+if type trash > /dev/null 2>&1; then
+    alias trm='trash'
+    alias tre='trash-restore'
+    alias tls='trash-list'
 fi
 
 alias pc='proxychains4'

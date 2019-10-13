@@ -1,0 +1,13 @@
+#!/usr/bin/bash
+
+# install code extensions
+installed="$(code --list-extensions | wc -l)"
+need_installed="$(cat extensions.list | wc -l)"
+echo $installed $need_installed
+#if [ $need_installed -gt $installed ]; then
+#    cat extensions.list | xargs -L 1 echo code --install-extension > install.sh
+#    chmod +x install.sh
+#    ./install.sh
+#    rm install.sh
+#fi
+

@@ -60,5 +60,6 @@
     "terminal.external.linuxExec": "st",
     "debug.enableAllHovers": true,
     "files.trimTrailingWhitespace": true,
-    "java.jdt.ls.vmargs": "-noverify -Xmx1G -XX:+UseG1GC -XX:+UseStringDeduplication -javaagent:\"/home/knothhe/.vscode-oss/extensions/gabrielbb.vscode-lombok-0.9.8/server/lombok.jar\"",
+    "java.jdt.ls.vmargs": "-noverify -Xmx1G -XX:+UseG1GC -XX:+UseStringDeduplication -javaagent:\"/home/knothhe/.vscode/extensions/gabrielbb.vscode-lombok-0.9.9/server/lombok.jar\"",
+    "python.jediEnabled": false,
 }

@@ -29,12 +29,7 @@ common=( \
     'flameshot' \
     'figlet' \
     'st' \
-    )
-
-jetbrains=( \
-    'intellij-idea-ultimate-edition' \
-    'pycharm-professional' \
-    'clion' \
+    'trash-cli' \
     )
 
 fonts=( \
@@ -100,13 +95,12 @@ read -p "Install i3 packages [Y/n] ? " ans
 arr=${i3[*]}
 install_query
 
-read -p "Install jetbrains packages [Y/n] ? " ans
-arr=${jetbrains[*]}
-install_query
-
 read -p "Install font packages [Y/n] ? " ans
 arr=${fonts[*]}
 install_query
+
+read -p "Install zsh plugins [Y/n] ? " ans
+# TODO
 
 echo -en "\E[41m\E[37mDONE\E(B\E[m" # red background color
 echo ""

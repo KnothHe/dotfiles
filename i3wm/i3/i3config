@@ -269,11 +269,9 @@ mode "$mode_launcher" {
     bindsym f exec firefox,                             mode "default"
     bindsym g exec gimp,                                mode "default"
     bindsym h exec thunar,                              mode "default"
-    bindsym i exec intellij-idea-ultimate-edition,      mode "default"
     bindsym l exec ~/bin/sts4,                          mode "default"
     bindsym j exec clion,                               mode "default"
     bindsym n exec netease-cloud-music,                 mode "default"
-    bindsym p exec pycharm,                             mode "default"
     bindsym q exec qtcreator,                           mode "default"
     bindsym t exec thunderbird,                         mode "default"
     bindsym s exec st,                                  mode "default"
@@ -289,7 +287,7 @@ bindsym $mod+o mode "$mode_launcher"
 set $mode_chrome_app Chrome App
 mode "$mode_chrome_app" {
     bindsym c exec google-chrome-stable --app=https://calendar.google.com/calendar/r?hl=zh-CN,  mode "default"
-    bindsym d exec google-chrome-stable --app=https://docs.google.com/document/u/0/,            mode "default"
+    bindsym d exec google-chrome-stable --app=https://docs.google.com,                          mode "default"
     bindsym g exec google-chrome-stable --app=https://www.github.com/,                          mode "default"
     bindsym f exec google-chrome-stable --app=https://translate.google.cn/,                     mode "default"
     bindsym h exec google-chrome-stable       https://news.ycombinator.com/,                    mode "default"
@@ -383,6 +381,7 @@ for_window [class="Manjaro Settings Manager"] floating enable
 for_window [class="matplotlib"] floating enable
 for_window [class="Sxiv"] floating enable
 for_window [class="st-256color"] floating enable
+for_window [class="feh"] floating enable
 for_window [instance="translate.google.cn"] floating enable
 
 #for_window [class="jetbrains-studio"] floating disable

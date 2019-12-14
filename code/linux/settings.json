@@ -62,4 +62,11 @@
     "files.trimTrailingWhitespace": true,
     "java.jdt.ls.vmargs": "-noverify -Xmx1G -XX:+UseG1GC -XX:+UseStringDeduplication -javaagent:\"/home/knothhe/.vscode/extensions/gabrielbb.vscode-lombok-0.9.9/server/lombok.jar\"",
     "python.jediEnabled": false,
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "markdown.preview.fontSize": 16,
 }

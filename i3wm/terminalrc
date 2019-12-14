@@ -42,4 +42,7 @@ BackgroundMode=TERMINAL_BACKGROUND_IMAGE
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
 MiscSearchDialogOpacity=100
 MiscShowUnsafePasteDialog=TRUE
+ShortcutsNoMnemonics=TRUE
+ShortcutsNoMenukey=TRUE
+ShortcutsNoHelpkey=TRUE
 

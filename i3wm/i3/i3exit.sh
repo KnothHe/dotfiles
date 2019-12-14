@@ -1,12 +1,13 @@
 #!/bin/sh
 lock() {
-#    -b enable beeping
-#    -t display the image tiled all over the screen
-#    -e ignore empty password
-#    i3lock -e -b -t -i ~/Pictures/Wallpapers/my-brain.png
+# depend on scort, imageMagick and i3lock
+    lock_img="/tmp/lockscreen.png"
+    scrot -q 50 -d 1 -o $lock_img
+    convert -paint 3 $lock_img $lock_img
+    i3lock -b --ignore-empty-password -i $lock_img
 
-#   depend on lightdm
-    dm-tool switch-to-greeter
+# depend on lightdm
+#    dm-tool switch-to-greeter
 }
 
 case "$1" in

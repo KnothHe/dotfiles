@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+
+./pacman-install
+./omz-install
+./omz-plugins-install

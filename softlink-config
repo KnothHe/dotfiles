@@ -24,7 +24,6 @@ if [ $# -eq 3 ]; then
     dotFile="$(pwd)/$3"
     softlink
     echo -en "\E[41m\E[37m$cfgDir/$cfgName\E(B\E[m"
-    echo ""
     echo -en "\E[32m and \E(B\E[m"
     echo ""
     echo -en "\E[43m\E[30m$dotFile\E(B\E[m"

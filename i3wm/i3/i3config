@@ -438,7 +438,7 @@ exec --no-startup-id xfce4-power-manager
 exec_always --no-startup-id xmodmap ~/.Xmodmap
 exec_always --no-startup-id exec killall -q noti
 exec_always --no-startup-id dunst -config $HOME/.config/dunst/dunstrc
-exec_always --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/mountains-purple.jpg
+exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
 exec_always --no-startup-id $polybar start
 
 # class                 border  backgr. text    indicator child_border

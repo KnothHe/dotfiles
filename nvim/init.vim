@@ -117,8 +117,6 @@ iabbrev ccpoy Copyright 2018 Guanglai He, all rights reserved.
 " - For vim: ~/.vim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.local/share/nvim/plugged')
-" sourcetrail
-Plug 'CoatiSoftware/vim-sourcetrail'
 " file directory
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 " completion, for completion, consider ncm2
@@ -136,7 +134,7 @@ Plug 'ncm2/ncm2-path'
 Plug 'ncm2/ncm2-pyclang', { 'for' : ['c', 'c++']}
 " python completion
 Plug 'ncm2/ncm2-jedi', { 'for' : 'python' }
-" java completio))n
+" java completion
 " Plug 'ObserverOfTime/ncm2-jc2', {'for': ['java', 'jsp']}
 " Plug 'artur-shaik/vim-javacomplete2', {'for': ['java', 'jsp']}
 " move
@@ -152,13 +150,12 @@ Plug 'iamcco/mathjax-support-for-mkdp', { 'for' : 'markdown' }
 Plug 'iamcco/markdown-preview.vim', { 'for' : 'markdown' }
 " UI
 Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'sickill/vim-monokai', { 'as' : 'monokai' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'luochen1990/rainbow'
 Plug 'Yggdroot/indentLine'
 " git
-" Plug 'tpope/vim-fugitive')
+" Plug 'tpope/vim-fugitive'
 " search highlight
 Plug 'haya14busa/is.vim'
 " color code and name highlight
@@ -168,7 +165,6 @@ Plug 'lervag/vimtex'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'Yggdroot/LeaderF'
-Plug 'echuraev/translate-shell.vim', { 'do': 'wget -O ~/.vim/trans git.io/trans && chmod +x ~/.vim/trans' }
 Plug 'vim-scripts/DrawIt'
 " Plug 'w0rp/ale')
 Plug 'junegunn/limelight.vim'
@@ -302,54 +298,45 @@ let g:ncm2_pyclang#database_path = [
 autocmd FileType c,cpp nnoremap <buffer> gd :<c-u>call ncm2_pyclang#goto_declaration()<cr>
 " }}}
 
-" translate-shell {{{
-let g:trans_bin = "~/.vim"
+""" {{{ vimtex
+""let g:tex_flavor = 'latex'
+"""let g:Tex_CompileRule_pdf = 'latexmk -xelatex -pdf $*'
+""let g:vimtex_view_method = 'zathura'
+"""let g:latex_view_general_viewer='okular'
+""let g:vimtex_quickfix_mode = 0
+"""set conceallevel=1
+"""let g:tex_conceal='abdmg'
+""let g:tex_conceal = ""
+""" neovim need install neovim-remote
+""let g:vimtex_compiler_progname = 'nvr'
 
-nnoremap <silent> <leader>tt :Trans -t zh-CN<CR>
-vnoremap <silent> <leader>tt :Trans -t zh-CN<CR>
-nnoremap <silent> <leader>td :TransSelectDirection<CR>
-vnoremap <silent> <leader>td :TransSelectDirection<CR>
-" }}}
+""set completeopt=noinsert,menuone,noselect
 
-" {{{ vimtex
-let g:tex_flavor = 'latex'
-"let g:Tex_CompileRule_pdf = 'latexmk -xelatex -pdf $*'
-let g:vimtex_view_method = 'zathura'
-"let g:latex_view_general_viewer='okular'
-let g:vimtex_quickfix_mode = 0
-"set conceallevel=1
-"let g:tex_conceal='abdmg'
-let g:tex_conceal = ""
-" neovim need install neovim-remote
-let g:vimtex_compiler_progname = 'nvr'
+""augroup my_cm_setup
+""    autocmd!
+""    autocmd BufEnter * call ncm2#enable_for_buffer()
+""    autocmd Filetype tex call ncm2#register_source({
+""                \ 'name': 'vimtex',
+""                \ 'priority': 8,
+""                \ 'scope': ['tex'],
+""                \ 'mark': 'tex',
+""                \ 'word_pattern': '\w+',
+""                \ 'complete_pattern': g:vimtex#re#ncm2,
+""                \ 'on_complete': ['ncm2#on_complete#omni', 'vimtex#complete#omnifunc'],
+""                \ })
+""augroup END
+""" }}}
 
-set completeopt=noinsert,menuone,noselect
+"" {{{ ultisnips
+""" Trigger configuration. Do not use <tab> if you use
+""" https://github.com/Valloric/YouCompleteMe.
+""let g:UltiSnipsExpandTrigger="<tab>"
+""let g:UltiSnipsJumpForwardTrigger="<c-b>"
+""let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
-augroup my_cm_setup
-    autocmd!
-    autocmd BufEnter * call ncm2#enable_for_buffer()
-    autocmd Filetype tex call ncm2#register_source({
-                \ 'name': 'vimtex',
-                \ 'priority': 8,
-                \ 'scope': ['tex'],
-                \ 'mark': 'tex',
-                \ 'word_pattern': '\w+',
-                \ 'complete_pattern': g:vimtex#re#ncm2,
-                \ 'on_complete': ['ncm2#on_complete#omni', 'vimtex#complete#omnifunc'],
-                \ })
-augroup END
-" }}}
-
-" {{{ ultisnips
-" Trigger configuration. Do not use <tab> if you use
-" https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
-" }}}
+""" If you want :UltiSnipsEdit to split your window.
+""let g:UltiSnipsEditSplit="vertical"
+""" }}}
 
 " MISC {{{
 " set python environment

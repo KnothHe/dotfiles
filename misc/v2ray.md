@@ -1,0 +1,3 @@
+- configuration file is /etc/v3ray/config.json
+- use proxy switchyomega
+- gfwlist https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt

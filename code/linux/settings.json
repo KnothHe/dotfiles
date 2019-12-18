@@ -7,7 +7,6 @@
     "vim.autoSwitchInputMethod.obtainIMCmd": "/usr/bin/fcitx-remote",
     "vim.autoSwitchInputMethod.switchIMCmd": "/usr/bin/fcitx-remote -t {im}",
     "vim.changeWordIncludesWhitespace": true,
-    "workbench.iconTheme": "material-icon-theme",
     "zenMode.centerLayout": false,
     "window.menuBarVisibility": "default",
     "window.zoomLevel": 0,

@@ -1,0 +1,127 @@
+#!/bin/bash
+
+cat <<-'EOF'
+                                                  _            __        ____
+    ____  ____ __________ ___  ____ _____        (_)___  _____/ /_____ _/ / /
+   / __ \/ __ `/ ___/ __ `__ \/ __ `/ __ \______/ / __ \/ ___/ __/ __ `/ / / 
+  / /_/ / /_/ / /__/ / / / / / /_/ / / / /_____/ / / / (__  ) /_/ /_/ / / /  
+ / .___/\__,_/\___/_/ /_/ /_/\__,_/_/ /_/     /_/_/ /_/____/\__/\__,_/_/_/   
+/_/                                                                          
+
+Use pacman in Manjaro                                                  
+Some packages may need add archlinux-cn as package source              
+
+EOF
+
+common=( \
+    'neofetch' \
+    'v2ray' \
+    'yay' \
+    'arc-gtk-theme' \
+    'google-chrome' \
+    'fzf' \
+    'tldr' \
+    'ristretto' \
+    'flameshot' \
+    'figlet' \
+    'st' \
+    'trash-cli' \
+    'tmux' \
+    'lxappearance' \
+    'proxychains-ng' \
+    'xsel' \
+    'privoxy' \
+    'zathura' \
+    'onedrive-abraunegg' \
+    )
+
+fonts=( \
+    'noto-fonts' \
+    'noto-fonts-cjk' \
+    'noto-fonts-emoji' \
+    'adobe-source-code-pro-fonts'\
+    )
+
+i3=( \
+    'dunst' \
+    'polybar' \
+    'ttf-font-awesome' \
+    'rofi' \
+    'feh' \
+    'xorg-xbacklight' \
+    'i3-gaps' \
+    'i3-wm' \
+    'i3blocks' \
+    'i3lock' \
+    'xdo' \
+    'i3-scrot'
+    )
+
+fcitx=(\
+    'fcitx-rime' \
+    'fcitx' \
+    'fcitx-gtk2' \
+    'fcitx-gtk3' \
+    'fcitx-qt5' \
+    'fcitx-configtool' \
+    )
+
+editors=(\
+    'neovim' \
+    'vim' \
+    'visual-studio-code-bin' \
+    'emacs' \
+    )
+
+# 'texlive-most' 'texlive-lang'
+
+pacin='sudo pacman -S'
+ins=$pacin
+function pacman_install {
+    if pacman -Qi $package > /dev/null 2>&1; then
+        echo -en "\E[32m$package\E(B\E[m has been installed" # green foreground
+        echo ""
+    else
+        yes | $ins $package
+        echo -en "\E[32m$package\E(B\E[m installation is completed" # green foreground
+        echo ""
+    fi
+}
+
+echo ":: Groups:"
+echo "   1) common  2) i3  3) fonts  4) fcitx"
+echo "   5) editors"
+read -p "Enter a selection (default=all): " ans
+
+case "$ans" in
+    "")
+        arr+="${common[*]} ${i3[*]} ${font[*]} ${fcitx[*]} \
+            ${editors[*]}"
+        ;;
+    "1")
+        arr=${common[*]}
+        ;;
+    "2")
+        arr=${i3[*]}
+        ;;
+    "3")
+        arr=${font[*]}
+        ;;
+    "4")
+        arr=${fcitx[*]}
+        ;;
+    "5")
+        arr=${editors[*]}
+        ;;
+    *)
+        echo -en "\E[41m\E[37mWRONG SELECTION\n\E(B\E[m" # red background color
+        exit 2
+esac
+
+for package in ${arr[@]};
+do
+    pacman_install
+done
+
+./done
+

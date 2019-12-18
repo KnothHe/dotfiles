@@ -1,0 +1,22 @@
+#!/usr/bin/bash
+
+cat <<-'EOF'
+                              _            __        ____
+  ____  ____ ___  ____       (_)___  _____/ /_____ _/ / /
+ / __ \/ __ `__ \/_  /______/ / __ \/ ___/ __/ __ `/ / / 
+/ /_/ / / / / / / / //_____/ / / / (__  ) /_/ /_/ / / /  
+\____/_/ /_/ /_/ /___/    /_/_/ /_/____/\__/\__,_/_/_/   
+                                                         
+Installation script of oh-my-zsh
+
+EOF
+
+OH_MY_ZSH_HOME="$HOME/.oh-my-zsh"
+
+if [ -ne  "$OH_MY_ZSH_HOME" ]; then
+    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
+echo "Oh My Zsh has been installed"
+
+./done
+

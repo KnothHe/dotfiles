@@ -1,0 +1,37 @@
+#!/usr/bin/bash
+
+cat <<-'EOF'
+                                    __            _           
+  ____  ____ ___  ____       ____  / /_  ______ _(_)___  _____
+ / __ \/ __ `__ \/_  /______/ __ \/ / / / / __ `/ / __ \/ ___/
+/ /_/ / / / / / / / //_____/ /_/ / / /_/ / /_/ / / / / (__  ) 
+\____/_/ /_/ /_/ /___/    / .___/_/\__,_/\__, /_/_/ /_/____/  
+                         /_/            /____/                
+
+Installation scirpt of third party oh-my-zsh plugins
+
+EOF
+
+# install third party oh-my-zsh plugin
+ZSH_CUSTOM_PLUGINS="$HOME/.oh-my-zsh/custom/plugins"
+function install_github_plugin {
+    plugin="$ZSH_CUSTOM_PLUGINS/$plugin_name"
+    if [ ! -d $plugin ]; then
+        mkdir -p plugin
+        git clone "$remote_plugin" "$plugin"
+    else
+        echo "$plugin_name has been installed"
+    fi
+}
+
+# zsh autosuggestions
+plugin_name="zsh-autosuggestions"
+remote_plugin="https://github.com/zsh-users/zsh-autosuggestions"
+install_github_plugin
+
+# zsh syntax highlighting
+plugin_name="zsh-syntax-highlighting"
+remote_plugin="https://github.com/zsh-users/zsh-syntax-highlighting"
+install_github_plugin
+
+./done

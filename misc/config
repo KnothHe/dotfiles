@@ -5,13 +5,22 @@ softlink="../softlink-config"
 $softlink "$HOME" ".dir_colors" "dir_colors"
 # touchpad
 $softlink "/etc/X11/xorg.conf.d" "30-touchpad.conf" "30-touchpad.conf"
-## terminal draculat theme
-#$softlink "/etc/X11/xorg.conf.d" "30-touchpad.conf" "30-touchpad.conf"
-# privoxy
-$softlink "/etc/privoxy" "privoxy" "privoxy"
 # proxychains-ng
 $softlink "/etc" "proxychains.conf" "proxychains.conf"
 # zathurarc
 $softlink "$HOME/.config/zathura" "zathurarc" "zathurarc"
-# v2ray !!! just a template, you need to fill in the content yourself
-
+# xprofile for fcitx
+$softlink "$HOME" ".xprofile" "xprofile"
+# wallpaper
+$softlink "$HOME/Pictures" "wallpaper.jpg" "wallpaper.jpg"
+# terminal wallpaper
+$softlink "$HOME/Pictures" "terminal-wallpaper.jpg" "terminal-wallpaper.jpg"
+# fcitx skin
+$softlink "$HOME/.config/fcitx/skin" "mint-dark" "fcitx-mint-dark"
+# privoxy
+FORWARD_PROXY='forward-socks5 / 127.0.0.1:1080 .'
+PRIVOXY_CONFIG='/etc/privoxy/config'
+grep "$FORWARD_PROXY" "$PRIVOXY_CONFIG" >> /dev/null || echo "$FORWARD_PROXY" >> "$PRIVOXY_CONFIG"
+echo "Privoxy config has been done"
+# v2ray !!! just a template, you need to fill in the content yourself,
+# see v2ray.md

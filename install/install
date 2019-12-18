@@ -3,3 +3,4 @@
 ./pacman-install
 ./omz-install
 ./omz-plugins-install
+./nvim-plug

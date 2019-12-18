@@ -68,4 +68,5 @@
         "**/.factorypath": true
     },
     "markdown.preview.fontSize": 16,
+    "workbench.iconTheme": "material-icon-theme",
 }

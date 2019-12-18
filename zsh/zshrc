@@ -80,6 +80,7 @@ HIST_STAMPS="mm/dd/yyyy"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+    zsh-completions
     zsh-syntax-highlighting
     zsh-autosuggestions
     colored-man-pages
@@ -132,11 +133,11 @@ if type musicbox > /dev/null 2>&1; then
     alias music='musicbox'
 fi
 
-# if type leetcode > /dev/null 2>&1; then
+if type leetcode > /dev/null 2>&1; then
     alias lc='leetcode'
     alias plc='proxychains4 leetcode'
     alias lcshow='leetcode show -gxe'
-# fi
+fi
 
 if type i3 > /dev/null 2>&1; then
     alias i3config="$EDITOR $HOME/.config/i3/config"
@@ -164,7 +165,7 @@ alias pc='proxychains4'
 
 alias bc='bc -l'
 alias c='clear'
-alias today='date +%Y-%m-%d'
+alias today='date +%F'
 alias tmuxconfig="$EDITOR $HOME/.tmux.conf"
 alias say='fortune | cowsay | lolcat'
 alias emacs='emacs -nw'
@@ -179,9 +180,9 @@ alias mv=' timeout 8 mv -iv'
 alias rm=' noglob timeout 3 rm -Iv --one-file-system'
 alias cp='cp -i'
 
-alias ojn='ojn.sh'
-alias marktext='flatpak run com.github.marktext.marktext'
 alias zathura='nohup zathura'
+
+alias todo='$EDITOR .todo'
 
 # nvm for nvim
 if [ -f /usr/share/nvm/init-nvm.sh ]; then

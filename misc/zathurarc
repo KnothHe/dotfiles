@@ -41,6 +41,7 @@ set recolor-darkcolor           "#eeeeee" # base1
 # set recolor-keephue             true      # keep original color
 
 set smooth-scroll "true"
+set sandbox none
 
 set font "inconsolata 15"
 set selection-clipboard clipboard

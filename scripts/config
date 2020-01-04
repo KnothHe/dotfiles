@@ -4,5 +4,6 @@ softlink="../softlink-config"
 $softlink "$HOME/bin" "img2png" "img2png"
 $softlink "$HOME/bin" "copyimg" "copyimg"
 $softlink "$HOME/bin" "ojn" "ojn"
+$softlink "$HOME/bin" "lcn" "lcn"
 $softlink "$HOME/bin" "mdc" "multidisplay-choose"
 

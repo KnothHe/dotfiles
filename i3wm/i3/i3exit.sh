@@ -4,7 +4,7 @@ lock() {
     lock_img="/tmp/lockscreen.png"
     scrot -q 50 -d 1 -o $lock_img
     convert -paint 3 $lock_img $lock_img
-    i3lock -b --ignore-empty-password -i $lock_img
+    i3lock -b --ignore-empty-password -i $lock_img -f
 
 # depend on lightdm
 #    dm-tool switch-to-greeter

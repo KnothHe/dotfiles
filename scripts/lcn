@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+
+name=$*
+name=`echo "$name" | sed 's/ //' | sed 's/ /-/g'`
+
+$EDITOR ${name}".java"
+

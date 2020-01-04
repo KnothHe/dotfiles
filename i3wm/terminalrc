@@ -41,7 +41,8 @@ BackgroundImageShading=0.800000
 BackgroundMode=TERMINAL_BACKGROUND_IMAGE
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
 MiscSearchDialogOpacity=100
-MiscShowUnsafePasteDialog=TRUE
+MiscShowUnsafePasteDialog=FALSE
 ShortcutsNoMnemonics=TRUE
 ShortcutsNoMenukey=TRUE
 ShortcutsNoHelpkey=TRUE
+

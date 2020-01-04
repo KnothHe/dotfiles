@@ -18,8 +18,8 @@ font pango:Noto Sans CJK SC 12
 
 #i3-gaps
 for_window [class="^.*"] border pixel 1
-gaps inner 10
-gaps outer 10
+gaps inner 5
+gaps outer 5
 smart_borders on
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -267,16 +267,14 @@ mode "$mode_launcher" {
     bindsym f exec firefox,                                     mode "default"
     bindsym g exec gimp,                                        mode "default"
     bindsym h exec thunar,                                      mode "default"
-    bindsym l exec ~/bin/sts4,                                  mode "default"
-    bindsym j exec clion,                                       mode "default"
     bindsym m exec google-chrome-stable --app=https://musi.sh/, mode "default"
     bindsym n exec netease-cloud-music,                         mode "default"
-    bindsym q exec qtcreator,                                   mode "default"
     bindsym t exec thunderbird,                                 mode "default"
     bindsym s exec st,                                          mode "default"
     bindsym v exec code,                                        mode "default"
-    bindsym w exec vboxmanage startvm Win7,                     mode "default"
     bindsym z exec zeal,                                        mode "default"
+    bindsym 7 exec vboxmanage startvm Win7,                     mode "default"
+    bindsym 0 exec vboxmanage startvm Win10,                    mode "default"
 
     bindsym Escape mode "default"
     bindsym Return mode "default"
@@ -430,11 +428,11 @@ bindsym $mod+minus move scratchpad
 bindsym $mod+equal scratchpad show
 
 # start-up
-exec --no-startup-id compton -b
 exec --no-startup-id nm-applet
 # exec --no-startup-id redshift-gtk
 exec --no-startup-id xfce4-power-manager
 #exec_always --no-startup-id $HOME/bin/mdc
+exec_always --no-startup-id compton -b
 exec_always --no-startup-id xmodmap ~/.Xmodmap
 exec_always --no-startup-id exec killall -q noti
 exec_always --no-startup-id dunst -config $HOME/.config/dunst/dunstrc

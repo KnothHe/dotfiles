@@ -123,6 +123,37 @@ fi
 alias zshconfig="$EDITOR $HOME/.zshrc"
 alias ohmyzshconfig="$EDITOR $HOME/.oh-my-zsh"
 
+alias pc='proxychains4'
+
+alias bc='bc -l'
+alias c='clear'
+alias today='date +%F'
+alias tmuxconfig="$EDITOR $HOME/.tmux.conf"
+alias say='fortune | cowsay | lolcat'
+alias emacs='emacs -nw'
+
+alias ...='cd ../../'
+alias ....='cd ../../../'
+alias .....='cd ../../../../'
+alias .4='cd ../../../'
+alias .5='cd ../../../../'
+
+alias mv=' timeout 8 mv -iv'
+alias rm=' noglob timeout 3 rm -Iv --one-file-system'
+alias cp='cp -i'
+
+alias todo='$EDITOR .todo'
+
+alias setproxy="export ALL_PROXY=socks5://127.0.0.1:1080"
+alias unsetproxy="unset ALL_PROXY"
+
+alias ipy='ipython'
+
+# nvm for nvim
+if [ -f /usr/share/nvm/init-nvm.sh ]; then
+    source /usr/share/nvm/init-nvm.sh
+fi
+
 # neovim alias
 if type nvim > /dev/null 2>&1; then
     alias less='/usr/share/nvim/runtime/macros/less.sh'
@@ -161,38 +192,6 @@ if type trash > /dev/null 2>&1; then
     alias tls='trash-list'
 fi
 
-alias pc='proxychains4'
-
-alias bc='bc -l'
-alias c='clear'
-alias today='date +%F'
-alias tmuxconfig="$EDITOR $HOME/.tmux.conf"
-alias say='fortune | cowsay | lolcat'
-alias emacs='emacs -nw'
-
-alias ...='cd ../../'
-alias ....='cd ../../../'
-alias .....='cd ../../../../'
-alias .4='cd ../../../'
-alias .5='cd ../../../../'
-
-alias mv=' timeout 8 mv -iv'
-alias rm=' noglob timeout 3 rm -Iv --one-file-system'
-alias cp='cp -i'
-
-alias zathura='nohup zathura'
-
-alias todo='$EDITOR .todo'
-
-# nvm for nvim
-if [ -f /usr/share/nvm/init-nvm.sh ]; then
-    source /usr/share/nvm/init-nvm.sh
-fi
-
-alias setproxy="export ALL_PROXY=socks5://127.0.0.1:1080"
-alias unsetproxy="unset ALL_PROXY"
-
-alias ipy='ipython'
 
 # size of saved history
 HISTSIZE=100000

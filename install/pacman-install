@@ -36,6 +36,7 @@ common=( \
     'xsel' \
     'privoxy' \
     'zathura' \
+    'zathura-pdf-mupdf' \
     'onedrive-abraunegg' \
     )
 
@@ -58,7 +59,8 @@ i3=( \
     'i3blocks' \
     'i3lock' \
     'xdo' \
-    'i3-scrot'
+    'i3-scrot' \
+    'picom' \
     )
 
 fcitx=(\

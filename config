@@ -15,6 +15,9 @@
 #               Update: 2019-09-03           #
 ##############################################
 
+# reset HOME environment variable
+HOME='/home/knothhe'
+
 root_dir="$(pwd)"
 function conf {
     cd $cfg_dir
@@ -30,10 +33,11 @@ cfg_dir="$(pwd)/i3wm"; conf;
 cfg_dir="$(pwd)/zsh"; conf;
 # nvim
 cfg_dir="$(pwd)/nvim"; conf;
+# emacs
+cfg_dir="$(pwd)/emacs"; conf;
 # tmux
 cfg_dir="$(pwd)/tmux"; conf;
 # scripts
 cfg_dir="$(pwd)/scripts"; conf;
 # misc
 cfg_dir="$(pwd)/misc"; conf;
-

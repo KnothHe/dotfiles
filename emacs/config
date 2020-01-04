@@ -1,0 +1,6 @@
+#!/usr/bin/bash
+
+softlink="../softlink-config"
+# init.el
+$softlink "$HOME/.emacs.d" "init.el" "init.el"
+

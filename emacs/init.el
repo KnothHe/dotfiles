@@ -22,6 +22,7 @@
                       ;; --- Major Mode ---
                       js2-mode
                       racket-mode
+		      verilog-mode
                       ;; --- Minor Mode ---
                       nodejs-repl
                       exec-path-from-shell
@@ -84,6 +85,9 @@
 
 ;; change answer yes or no
 (fset 'yes-or-no-p 'y-or-n-p)
+
+(defun disable-tabs () (setq indent-tabs-mode nil))
+(disable-tabs)
 
 ;; make the mark region can be deleted like normal editor
 (delete-selection-mode 1)

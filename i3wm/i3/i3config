@@ -33,7 +33,7 @@ bindsym $mod+Shift+q kill
 bindsym --release $mod+q exec xkill
 
 # start rofi (a program launcher)
-bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons -theme Arc-Dark
+bindsym $mod+s exec --no-startup-id rofi -show drun -show-icons -theme Arc-Dark
 #bindsym $mod+m exec $HOME/bin/runsxiv
 # bindsym $mod+Tab exec --no-startup-id rofi -show window
 
@@ -71,7 +71,7 @@ bindsym $mod+e split toggle
 # change container layout (stacked, tabbed, toggle split)
 # bindsym $mod+s layout stacking
 bindsym $mod+t layout tabbed
-bindsym $mod+s layout toggle split
+bindsym $mod+d layout toggle split
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -261,7 +261,7 @@ bindsym $mod+r mode "$mode_resize"
 
 set $mode_launcher Launcher
 mode "$mode_launcher" {
-    bindsym b exec $browser,                                    mode "default"
+    bindsym b exec virtualbox,                                  mode "default"
     bindsym c exec google-chrome-stable,                        mode "default"
     bindsym e exec env "LC_CTYPE=zh_CN.UTF-8" emacs,            mode "default"
     bindsym f exec firefox,                                     mode "default"

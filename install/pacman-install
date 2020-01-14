@@ -38,6 +38,7 @@ common=( \
     'zathura' \
     'zathura-pdf-mupdf' \
     'onedrive-abraunegg' \
+    'lightdm-webkit2-greeter' \
     )
 
 fonts=( \

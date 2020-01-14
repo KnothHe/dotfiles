@@ -190,6 +190,7 @@ if type trash > /dev/null 2>&1; then
     alias trm='trash'
     alias tre='trash-restore'
     alias tls='trash-list'
+    alias rm='.'
 fi
 
 

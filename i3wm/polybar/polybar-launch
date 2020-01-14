@@ -4,12 +4,17 @@ case $1 in
     start)
         # Terminate already running bar instances
         killall -q polybar
+        # If all your bars have ipc enabled, you can also use 
+        polybar-msg cmd quit
 
         # Wait until the processes have been shut down
         while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
         # Launch top bar
         polybar top &
+        polybar bottom &
+        sleep 1
+        polybar-msg -p $(xdo pid -a "polybar-bottom_eDP1") cmd toggle 
         ;;
     top)
         if [ -z $(xdo pid -a "polybar-top_eDP1") ]; then
@@ -32,6 +37,8 @@ case $1 in
             && [ -z $(xdo pid -a "polybar-top_eDP1") ]; then
             # Terminate already running bar instances
             killall -q polybar
+            # If all your bars have ipc enabled, you can also use 
+            polybar-msg cmd quit
 
             # Wait until the processes have been shut down
             while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
@@ -53,6 +60,8 @@ case $1 in
     restart)
         # Terminate already running bar instances
         killall -q polybar
+        # If all your bars have ipc enabled, you can also use 
+        polybar-msg cmd quit
 
         # Wait until the processes have been shut down
         while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done

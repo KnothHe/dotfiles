@@ -42,9 +42,9 @@
         "titleBar.activeForeground": "#e7e7e7",
         "titleBar.inactiveForeground": "#e7e7e799",
         "statusBarItem.hoverBackground": "#009292",
-        "statusBar.background": "#5f0000",
-        "statusBar.noFolderBackground": "#5f0000",
-        "statusBar.debuggingBackground": "#5f0000"
+        "statusBar.background": "#005f5f",
+        "statusBar.noFolderBackground": "#005f5f",
+        "statusBar.debuggingBackground": "#005f5f"
     },
     "vim.camelCaseMotion.enable": true,
     "vim.handleKeys": {
@@ -69,4 +69,5 @@
     },
     "markdown.preview.fontSize": 16,
     "workbench.iconTheme": "material-icon-theme",
+    "verilog.linting.linter": "iverilog",
 }

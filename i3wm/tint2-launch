@@ -1,0 +1,8 @@
+#!/usr/bin/bash
+
+if [ -z $(xdo pid -a "tint2") ]; then
+    tint2
+else
+    killall -q tint2
+fi
+

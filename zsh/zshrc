@@ -197,3 +197,6 @@ fi
 # size of saved history
 HISTSIZE=100000
 SAVEHIST=100000
+
+PATH="$PATH:/root/.gem/ruby/1.9.1/bin"
+

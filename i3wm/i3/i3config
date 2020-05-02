@@ -261,7 +261,7 @@ bindsym $mod+r mode "$mode_resize"
 
 set $mode_launcher Launcher
 mode "$mode_launcher" {
-    bindsym b exec virtualbox,                                  mode "default"
+    bindsym b exec virtualbox -style cleanlooks,                mode "default"
     bindsym c exec google-chrome-stable,                        mode "default"
     bindsym e exec env "LC_CTYPE=zh_CN.UTF-8" emacs,            mode "default"
     bindsym f exec firefox,                                     mode "default"
@@ -411,16 +411,15 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 set $mode_bar Bar
 mode "$mode_bar" {
     bindsym t exec $polybar top,        mode "default"
-    bindsym b exec $polybar bottom,     mode "default"
-    bindsym s exec $polybar restart,    mode "default"
-    bindsym h exec $polybar hide,       mode "default"
-    bindsym r exec $polybar restart,    mode "default"
+    bindsym b exec $HOME/bin/tint2-launch,                mode "default"
 
     # back to normal: Enter or Escape
     bindsym Escape mode "default"
     bindsym Return mode "default"
 }
 bindsym $mod+b mode "$mode_bar"
+## polybar
+#bindsym $mod+b exec $polybar top, mode "default"
 
 # set current window as scratch pad
 bindsym $mod+minus move scratchpad
@@ -429,9 +428,7 @@ bindsym $mod+equal scratchpad show
 
 # start-up
 exec --no-startup-id nm-applet
-# exec --no-startup-id redshift-gtk
 exec --no-startup-id xfce4-power-manager
-#exec_always --no-startup-id $HOME/bin/mdc
 exec_always --no-startup-id compton -b
 exec_always --no-startup-id xmodmap ~/.Xmodmap
 exec_always --no-startup-id exec killall -q noti

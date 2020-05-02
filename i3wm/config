@@ -21,4 +21,5 @@ $softlink "$HOME" ".profile" "profile"
 $softlink "$HOME/.config/xfce4/terminal" "terminalrc" "terminalrc"
 # Xmodmap
 $softlink "$HOME" ".Xmodmap" "Xmodmap"
-
+# tint2
+$softlink "$HOME/bin" "tint2-launch" "tint2-launch"

@@ -1,4 +1,4 @@
-;==========================================================
+==========================================================
 ;
 ;
 ;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
@@ -26,7 +26,8 @@ transparent = #00000000
 background = #aa000000
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
-foreground = #fea724
+;foreground = #fea724
+foreground = #aaaaff
 foreground-alt = #555
 primary = #ffb52a
 secondary = #e60053
@@ -64,54 +65,11 @@ font-4 = Font Awesome 5 Free:style=Solid:pixelsize=12;3
 font-5 = Source Code Pro Semibold:style=Medium:pixelsize=12;3
 
 modules-left = i3
-modules-center = title
-modules-right = toggle-trays xbacklight pulseaudio battery  date menu-apps
+modules-center =
+modules-right = xbacklight pulseaudio battery  date menu-apps
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
-
-cursor-click = pointer
-cursor-scroll = ns-resize
-
-enable-ipc = true
-
-[bar/bottom]
-;monitor = ${env:MONITOR:HDMI-1}
-width = 100%
-height = 27
-radius = 0.0
-fixed-center = false
-
-background = ${colors.transparent}
-foreground = ${colors.foreground}
-
-line-size = 3
-line-color = #f00
-
-border-size = 0
-border-color = #00000000
-
-padding-left = 1
-padding-right = 1
-
-module-margin-left = 1
-module-margin-right = 1
-
-font-0 = Font Awesome 5 Free:pixelsize=12;3
-font-1 = Font Awesome 5 Free Solid:pixelsize=12;3
-font-2 = Font Awesome 5 Brands:pixelsize=12;3
-font-3 = Font Awesome 5 Free:style=Regular:pixelsize=12;3
-font-4 = Font Awesome 5 Free:style=Solid:pixelsize=12;3
-font-5 = Source Code Pro Semibold:style=Medium:pixelsize=12;3
-
-modules-right = toggle-trays
-
-tray-position = right
-tray-padding = 2
-;tray-background = ${color.background}
-
-override-redirect = true
-bottom = true
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -200,7 +158,7 @@ type = internal/date
 interval = 5
 
 date = "  %a %e %b "
-date-alt = "  %Y-%m-%d %a "
+date-alt = "  %a %Y-%m-%d "
 
 time =  %H:%M
 time-alt =  %H:%M:%S
@@ -353,18 +311,5 @@ label-close = 
 ; Optional item separator
 ; Default: none
 label-separator = |
-
-[module/toggle-trays]
-type = custom/text
-content = ""
-
-; "content" has the same properties as "format-NAME"
-content-background = ${colors.background}
-content-foreground = ${colors.foreground}
-content-padding = 0
-
-; "click-(left|middle|right)" will be executed using "/usr/bin/env sh -c $COMMAND"
-click-left = $HOME/bin/polybar-launch bottom
-click-right = $HOME/bin/polybar-launch bottom
 
 ; vim:ft=dosini

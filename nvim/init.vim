@@ -277,14 +277,6 @@ nmap <Leader>ll :Limelight!!<CR>
 " xmap <Leader>l <Plug>(Limelight)
 " }}}
 
-" ncm2 {{{
-" enable ncm2 for all buffers
-autocmd BufEnter * call ncm2#enable_for_buffer()
-
-" IMPORTANTE: :help Ncm2PopupOpen for more information
-set completeopt=noinsert,menuone,noselect
-" }}}
-
 " ncm2-pyclang {{{
 " path to directory where libclang.so can be found
 let g:ncm2_pyclang#library_path = '/usr/lib/llvm-6.0/lib'

@@ -4,6 +4,9 @@ export PATH="$HOME/.gem/ruby/2.6.0/bin:$HOME/bin:/usr/local/bin:$PATH"
 # Change default pip timeout
 export PIP_DEFAULT_TIMEOUT=100
 
+# nvm with taobao mirror
+export NVM_NODEJS_ORG_MIRROR=http://npm.taobao.org/mirrors/node
+
 if [ -d "$HOME/Applications" ]; then
     export PATH=$HOME/Applications:$PATH
 fi
@@ -139,7 +142,6 @@ alias .4='cd ../../../'
 alias .5='cd ../../../../'
 
 alias mv=' timeout 8 mv -iv'
-alias rm=' noglob timeout 3 rm -Iv --one-file-system'
 alias cp='cp -i'
 
 alias todo='$EDITOR .todo'
@@ -193,6 +195,7 @@ if type trash > /dev/null 2>&1; then
     alias rm='.'
 fi
 
+alias load_nvm='source $(brew --prefix nvm)/nvm.sh'
 
 # size of saved history
 HISTSIZE=100000
